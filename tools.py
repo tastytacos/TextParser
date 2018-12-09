@@ -21,6 +21,16 @@ def get_multiplier(param):
     return 1e6
 
 
+def transform_month(given_month_number):
+    if given_month_number == 10:
+        return 0
+    elif given_month_number == 6 or given_month_number == 11:
+        return 6
+    elif given_month_number == 7 or given_month_number == 12:
+        return 7
+    return given_month_number
+
+
 def handle_measure_value(given_data):
     new_data = given_data[1:-1]
     multiplier = get_multiplier(int(new_data[0]))
@@ -30,7 +40,7 @@ def handle_measure_value(given_data):
     valueSievert = formula(valueRoentgen, multiplier)
     return valueSievert
 
-
+#todo copy this
 months = {
     0: "10",
     1: "01",
@@ -38,14 +48,15 @@ months = {
     3: "03",
     4: "04",
     5: "05",
+    8: "08",
+    9: "09"
 }
 
-
+#todo copy this
 def handle_month(unhandled_month, creation_time):
-    m = months.get(int(unhandled_month))
     if unhandled_month == '6' or unhandled_month == '7':
         return creation_time.month
-    return m
+    return months.get(int(unhandled_month))
 
 
 # todo test this function
@@ -90,6 +101,4 @@ def get_excel_information(filename):
         height = str(row[5])
         if key.isdigit():
             data[key] = {'name': name, 'latitude': latitude, 'longitude': longitude, 'height': height}
-        else:
-            print("Not digit")
     return data

@@ -5,12 +5,12 @@ import uuid
 
 import pytz
 
-from tools import format_time, handle_measure_date, handle_measure_value
+from tools import format_time, handle_measure_date, handle_measure_value, transform_month
 
 creation_time = datetime.now()
 
 
-class WrongDayException(Exception):
+class WrongDateException(Exception):
     pass
 
 
@@ -115,20 +115,28 @@ def get_time_value(handled_lines):
     return new_dict
 
 
+# todo copy this
 def validate(time_value, times):
     return_time = []
     for time in times:
         a = time_value.get(time)
         try:
-            start_time, end_time = handle_measure_date(a[0].split(" ")[1], creation_time)
+            day = datetime.now().strftime("%d")
+            month = str(transform_month(datetime.now().month))
+            today_day_month = day + month
+            given_day_month = time[:3]
+
+            if today_day_month != given_day_month:
+                raise WrongDateException
             return_time.append(time)
-        except ValueError:
+        except WrongDateException:
             logging.error(
-                "Value error in - {} with line - {}".format(a[0].split(" ")[1], a))
+                "Incorrect date in - {} with line - {}".format(a[0].split(" ")[1], a))
             continue
     return return_time
 
 
+# todo copy this
 def to_xml(handled_lines, locations_data):
     time_value = get_time_value(handled_lines)
     times = sorted(list(time_value.keys()))
@@ -142,20 +150,10 @@ def to_xml(handled_lines, locations_data):
         a = time_value.get(time)
         try:
             start_time, end_time = handle_measure_date(a[0].split(" ")[1], creation_time)
-            today = datetime.now().day
-            # today = 10
 
-            taken_time_day = start_time.day
-            if today != taken_time_day:
-                raise WrongDayException
         except ValueError:
             logging.error(
                 "Value error in - {} with line - {}".format(a[0].split(" ")[1], a))
-            continue
-        except WrongDayException:
-            logging.error("Wrong day in - {} in line - {}. Day is {} but today is {}. This line was thrown out".format(
-                a[0].split(" ")[1], a,
-                taken_time_day, today))
             continue
 
         measurement_results = xml.SubElement(measurement_root, "mon:DoseRate")
