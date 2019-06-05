@@ -50,7 +50,7 @@ def to_xml(handled_lines):
 
 
 def create_xml_doc(xml_tree):
-    xml_tree.write("res/output.xml")
+    return xml_tree
 
 
 def parse(filename):
@@ -59,6 +59,5 @@ def parse(filename):
     handled_lines = handle_lines(lines)
     lines_xml_tree = to_xml(handled_lines)
     xml_document = create_xml_doc(lines_xml_tree)
+    return xml_document
 
-
-parse("res/Radiation.txt")
