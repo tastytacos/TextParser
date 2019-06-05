@@ -1,3 +1,6 @@
+import xml.etree.ElementTree as xml
+
+
 def handle_lines(lines):
     '''
     Grab the lines which match to requirement pattern from the set of given lines
@@ -12,33 +15,50 @@ def handle_lines(lines):
 
 
 def handle_measure_value(value):
-    pass
+    return value
 
 
 def handle_measure_date(date):
-    pass
+    return date
 
 
 def to_xml(handled_lines):
+    root = xml.Element("Measurements")
     for line in handled_lines:
-        if len(line) != 3:
-            raise ValueError("The size of the \"{}\" must be equal 3".format(line))
-        station_index = line[0]
-        measure_date = handle_measure_date(line[1])
-        measure_value = handle_measure_value(line[2])
+        if len(line.split(" ")) != 3:
+            print("The size of the \"{}\" must be equal 3".format(line))
+            continue
+        station_index = line.split(" ")[0]
+        measure_date = handle_measure_date(line.split(" ")[1])
+        measure_value = handle_measure_value(line.split(" ")[2])
 
-    pass
+        measurement_results = xml.SubElement(root, "MeasurementResult")
+        dose_rate = xml.SubElement(measurement_results, "DoseRateType")
+        dose_rate.text = "Gamma"
+        measurement_period = xml.SubElement(measurement_results, "MeasuringTime")
+        start_m_time = xml.SubElement(measurement_period, "StartTime")
+        start_m_time.text = measure_date
+        measurements = xml.SubElement(measurement_results, "Measurements")
+        measurement = xml.SubElement(measurements, "Measurement")
+        location = xml.SubElement(measurement, "Location", station_index=station_index)
+        value_units = xml.SubElement(measurement, "Value", Unit="Sv/s")
+        value_units.text = measure_value
+        validated = xml.SubElement(measurement, "Validated")
+        validated.text = "NotValidated"
+    tree = xml.ElementTree(root)
+    return tree
 
 
-def create_xml_doc(xml_lines):
-    pass
+def create_xml_doc(xml_tree):
+    xml_tree.write("res/output.xml")
 
 
 def parse(filename):
     file = open(filename, "r")
     lines = file.read().splitlines()
     handled_lines = handle_lines(lines)
-    xml_lines = to_xml(handled_lines)
-    xml_document = create_xml_doc(xml_lines)
+    lines_xml_tree = to_xml(handled_lines)
+    xml_document = create_xml_doc(lines_xml_tree)
 
-# parse("res/Radiation.txt")
+
+parse("res/Radiation.txt")
