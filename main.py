@@ -1,5 +1,6 @@
 from parser import parse
 from datetime import datetime
+
 input_file_location = "res/Radiation.txt"
 output_file_location = "res/output.xml"
 
