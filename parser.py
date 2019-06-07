@@ -20,7 +20,7 @@ def get_excel_information(filename):
         name = row[2]
         latitude = row[3]
         longitude = row[4]
-        height = row[5]
+        height = str(row[5])
         if key.isdigit():
             data[key] = {'name': name, 'latitude': latitude, 'longitude': longitude, 'height': height}
     return data
@@ -38,7 +38,7 @@ def handle_lines(lines):
             cleared_lines.append(line)
     return cleared_lines
 
-
+# Measurements and Locations block
 def to_xml(handled_lines, locations_data):
     measurement_root = xml.Element("Measurements", ValidAt=str(datetime.now()))
     locations_root = xml.Element("Locations")
@@ -65,7 +65,8 @@ def to_xml(handled_lines, locations_data):
         validated = xml.SubElement(measurement, "Validated").text = "NotValidated"
 
         location = xml.SubElement(locations_root, "Location", id=station_index)
-        stantion_name = xml.SubElement(location, "Name").text = locations_data.get(station_index).get("name")
+        name = locations_data.get(station_index).get("name")
+        stantion_name = xml.SubElement(location, "Name").text = name
         geo_coord = xml.SubElement(location, "GeographicCoordinates")
         latitude = xml.SubElement(geo_coord, "Latitude").text = locations_data.get(station_index).get("latitude")
         longitude = xml.SubElement(geo_coord, "Longitude").text = locations_data.get(station_index).get("longitude")
@@ -78,11 +79,26 @@ def to_xml(handled_lines, locations_data):
 
 
 def create_xml_doc(id_tree, measures_tree, locations_xml_tree):
+    report_root = xml.Element("Report")
+    result_tree = combine_xml(report_root, [measures_tree, locations_xml_tree])
+    print(xml.tostring(result_tree))
+    report_root_tree = xml.ElementTree(result_tree)
+    return report_root_tree
 
-    pass
 
+def combine_xml(root, trees):
+    first = root
+    for tree in trees:
+        data = tree.getroot()
+        first.append(data)
+    return first
 
+# Identification block
 def create_id_xml():
+    id_root = xml.Element("Identification")
+    org_reporting = xml.SubElement(id_root, "OrganisationsReporting").text = "meteo.gov.ua"
+
+
     pass
 
 
