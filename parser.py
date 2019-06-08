@@ -1,8 +1,11 @@
 import xml.etree.ElementTree as xml
 from datetime import datetime
+import uuid
 
 from measurements_handler import handle_measure_date, handle_measure_value
 import pandas as pd
+
+creation_time = datetime.now()
 
 
 def get_excel_information(filename):
@@ -38,9 +41,10 @@ def handle_lines(lines):
             cleared_lines.append(line)
     return cleared_lines
 
+
 # Measurements and Locations block
 def to_xml(handled_lines, locations_data):
-    measurement_root = xml.Element("Measurements", ValidAt=str(datetime.now()))
+    measurement_root = xml.Element("Measurements", ValidAt=str(creation_time))
     locations_root = xml.Element("Locations")
     for line in handled_lines:
         # the next checks are a requirement of specification
@@ -80,8 +84,7 @@ def to_xml(handled_lines, locations_data):
 
 def create_xml_doc(id_tree, measures_tree, locations_xml_tree):
     report_root = xml.Element("Report")
-    result_tree = combine_xml(report_root, [measures_tree, locations_xml_tree])
-    print(xml.tostring(result_tree))
+    result_tree = combine_xml(report_root, [id_tree, measures_tree, locations_xml_tree])
     report_root_tree = xml.ElementTree(result_tree)
     return report_root_tree
 
@@ -93,13 +96,46 @@ def combine_xml(root, trees):
         first.append(data)
     return first
 
+
+def format_time(given_time):
+    pass
+
+
 # Identification block
 def create_id_xml():
     id_root = xml.Element("Identification")
     org_reporting = xml.SubElement(id_root, "OrganisationsReporting").text = "meteo.gov.ua"
+    time = format_time(creation_time)
+    report_datetime = xml.SubElement(id_root, "DateAndTimeOfCreation").text = str(time)
+    report_context = xml.SubElement(id_root, "ReportContext").text = "Routine"
+    report_uuid = xml.SubElement(id_root, "ReportUUID").text = str(uuid.uuid4())
+    confidentiality = xml.SubElement(id_root, "Confidentiality").text = "For Authority Use Only"
+    identifications_fields = xml.SubElement(id_root, "Identifications")
 
+    person_info = xml.SubElement(identifications_fields, "PersonContactInfo")
+    name = xml.SubElement(person_info, "Name").text = "Leonid Tabachnyi"
+    org_person_id = xml.SubElement(person_info, "OrganisationID").text = "tabachnyi@meteo.gov.ua"
+    email = xml.SubElement(person_info, "EmailAdress").text = "380442399353"
 
-    pass
+    org_contacts_info = xml.SubElement(identifications_fields, "OrganisationContactInfo")
+    org_name = xml.SubElement(org_contacts_info, "Name").text = "Radiation Accidents Consequences Prediction Center"
+    org_id = xml.SubElement(org_contacts_info, "OrganisationInfo").text = "meteo.gov.ua"
+    org_country = xml.SubElement(org_contacts_info, "Country").text = "UA"
+    org_phone_number = xml.SubElement(org_contacts_info, "PhoneNumber").text = "380442399353"
+    org_fax_number = xml.SubElement(org_contacts_info, "FaxNumber").text = "380442796680"
+    org_email = xml.SubElement(org_contacts_info, "EmailAddress").text = "ceprac@meteo.gov.ua"
+    org_description = xml.SubElement(org_contacts_info, "Descrition").text = "Data originator for this report"
+
+    org1_contacts_info = xml.SubElement(identifications_fields, "OrganisationContactInfo")
+    org1_name = xml.SubElement(org1_contacts_info, "Name").text = "Ukrainian Hydrometeorological Center"
+    org1_id = xml.SubElement(org1_contacts_info, "OrganisationID").text = "meteo.gov.ua"
+    org1_country = xml.SubElement(org1_contacts_info, "Country").text = "UA"
+    org1_phone_number = xml.SubElement(org1_contacts_info, "PhoneNumber").text = "380442399387"
+    org1_fax_number = xml.SubElement(org1_contacts_info, "FaxNUmber").text = "380442791080"
+    org1_email = xml.SubElement(org1_contacts_info, "EmailAddress").text = "office@meteo.gov.ua"
+    org1_description = xml.SubElement(org1_contacts_info, "Description").text = "Data originator for this report"
+    id_tree = xml.ElementTree(id_root)
+    return id_tree
 
 
 def get_location_data():
