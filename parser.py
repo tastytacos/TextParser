@@ -2,7 +2,7 @@ import xml.etree.ElementTree as xml
 from datetime import datetime
 import uuid
 
-from measurements_handler import handle_measure_date, handle_measure_value
+from measurements_handler import handle_measure_date, handle_measure_value, format_time
 import pandas as pd
 
 creation_time = datetime.now()
@@ -51,7 +51,7 @@ def handle_lines(lines):
 
 # Measurements and Locations block
 def to_xml(handled_lines, locations_data):
-    measurement_root = xml.Element("mon:Measurements", ValidAt=str(creation_time))
+    measurement_root = xml.Element("mon:Measurements", ValidAt=format_time(creation_time))
     locations_root = xml.Element("loc:Locations")
     for line in handled_lines:
         # the next checks are a requirement of specification
@@ -62,13 +62,14 @@ def to_xml(handled_lines, locations_data):
             print(str(line.split(" ")[2]) + " must start with 8")
             continue
         station_index = line.split(" ")[0]
-        measure_date = handle_measure_date(line.split(" ")[1])
+        start_time, end_time = handle_measure_date(line.split(" ")[1], creation_time)
         measure_value = handle_measure_value(line.split(" ")[2])
 
         measurement_results = xml.SubElement(measurement_root, "mon:DoseRate")
         dose_rate = xml.SubElement(measurement_results, "mon:DoseRateType").text = "Gamma"
         measurement_period = xml.SubElement(measurement_results, "mon:MeasuringPeriod")
-        start_m_time = xml.SubElement(measurement_period, "mon:StartTime").text = measure_date
+        start_m_time = xml.SubElement(measurement_period, "mon:StartTime").text = start_time
+        end_m_time = xml.SubElement(measurement_period, "mon:EndTime").text = end_time
         measurements = xml.SubElement(measurement_results, "mon:Measurements")
         measurement = xml.SubElement(measurements, "mon:Measurement")
         measurement_location = xml.SubElement(measurement, "mon:Location", station_index=station_index)
@@ -111,8 +112,6 @@ def combine_xml(root, trees):
     return first
 
 
-def format_time(given_time):
-    pass
 
 
 # Identification block
