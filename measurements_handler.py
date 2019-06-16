@@ -1,8 +1,27 @@
 from datetime import datetime
 
 
-def handle_measure_value(value):
-    return value
+def formula(valueRoentgen, multiplier):
+    valueSievert = multiplier * 2.45e-12 *valueRoentgen
+    return valueSievert
+
+
+def get_multiplier(param):
+    if param == 0:
+        return 1
+    if param == 1:
+        return 10e3
+    return 10e6
+
+
+def handle_measure_value(given_data):
+    new_data = given_data[1:-1]
+    multiplier = get_multiplier(int(new_data[0]))
+    # per hour
+    valueRoentgen = int(new_data[-3] + new_data[-2] + new_data[-1])
+    #per second
+    valueSievert = formula(valueRoentgen, multiplier)
+    return str(valueSievert)
 
 
 months = {
