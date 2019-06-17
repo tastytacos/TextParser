@@ -4,6 +4,19 @@ import uuid
 
 from measurements_handler import handle_measure_date, handle_measure_value, format_time
 import pandas as pd
+import logging
+
+
+def generate_logfile_name():
+    directory = "logs"
+    return directory + "/{}.log".format(datetime.now().strftime("%Y-%m-%d %X"))
+
+
+logfile_name = generate_logfile_name()
+
+logging.basicConfig(format='%(levelname)-8s [%(asctime)s] %(message)s', level=logging.DEBUG, filename=logfile_name)
+
+excel_file_location = "res/MeteoSt-RAD.xls"
 
 creation_time = datetime.now()
 xmlms = {'base': "http://www.iaea.org/2012/IRIX/Format/Base",
@@ -46,6 +59,8 @@ def handle_lines(lines):
     for line in lines:
         if len(line.split(" ")) == 3:
             cleared_lines.append(line)
+        else:
+            logging.warning("The line - {} were thrown out because of wrong format".format(line))
     return cleared_lines
 
 
@@ -62,7 +77,16 @@ def to_xml(handled_lines, locations_data):
             print(str(line.split(" ")[2]) + " must start with 8")
             continue
         station_index = line.split(" ")[0]
-        start_time, end_time = handle_measure_date(line.split(" ")[1], creation_time)
+        try:
+            name = locations_data.get(station_index).get("name")
+        except AttributeError:
+            logging.error("Error while trying to get the station - {}, with index - {}".format(name, station_index))
+            continue
+        try:
+            start_time, end_time = handle_measure_date(line.split(" ")[1], creation_time)
+        except ValueError:
+            logging.error("Value error in - {} with line - {}".format(line.split(" ")[1], line))
+            continue
         measure_value = handle_measure_value(line.split(" ")[2])
 
         measurement_results = xml.SubElement(measurement_root, "mon:DoseRate")
@@ -77,7 +101,6 @@ def to_xml(handled_lines, locations_data):
         validated = xml.SubElement(measurement, "mon:Validated").text = "NotValidated"
 
         location = xml.SubElement(locations_root, "loc:Location", id=station_index)
-        name = locations_data.get(station_index).get("name")
         stantion_name = xml.SubElement(location, "loc:Name").text = name
         geo_coord = xml.SubElement(location, "loc:GeographicCoordinates")
         latitude = xml.SubElement(geo_coord, "loc:Latitude").text = locations_data.get(station_index).get("latitude")
@@ -112,10 +135,8 @@ def combine_xml(root, trees):
     return first
 
 
-
-
 # Identification block
-def create_id_xml():
+def create_id_xml(file):
     id_root = xml.Element("id:Identification")
     org_reporting = xml.SubElement(id_root, "id:OrganisationsReporting").text = "meteo.gov.ua"
     time = format_time(creation_time)
@@ -152,18 +173,72 @@ def create_id_xml():
     return id_tree
 
 
-def get_location_data():
-    file_location = "res/MeteoSt-RAD.xls"
-    data = get_excel_information(file_location)
+def default_fill_id_xml():
+    '''
+    The create_id_xml creates the Identification xml tree according to the data from outer file. If the file is
+    damaged or deleted the default filling of the tree goes here
+    '''
+    id_root = xml.Element("id:Identification")
+    org_reporting = xml.SubElement(id_root, "id:OrganisationsReporting").text = "meteo.gov.ua"
+    time = format_time(creation_time)
+    report_datetime = xml.SubElement(id_root, "id:DateAndTimeOfCreation").text = str(time)
+    report_context = xml.SubElement(id_root, "id:ReportContext").text = "Routine"
+    report_uuid = xml.SubElement(id_root, "id:ReportUUID").text = str(uuid.uuid4())
+    confidentiality = xml.SubElement(id_root, "id:Confidentiality").text = "For Authority Use Only"
+    identifications_fields = xml.SubElement(id_root, "id:Identifications")
+
+    person_info = xml.SubElement(identifications_fields, "base:PersonContactInfo")
+    name = xml.SubElement(person_info, "base:Name").text = "Leonid Tabachnyi"
+    org_person_id = xml.SubElement(person_info, "base:OrganisationID").text = "tabachnyi@meteo.gov.ua"
+    email = xml.SubElement(person_info, "base:EmailAdress").text = "380442399353"
+
+    org_contacts_info = xml.SubElement(identifications_fields, "base:OrganisationContactInfo")
+    org_name = xml.SubElement(org_contacts_info,
+                              "base:Name").text = "Radiation Accidents Consequences Prediction Center"
+    org_id = xml.SubElement(org_contacts_info, "base:OrganisationInfo").text = "meteo.gov.ua"
+    org_country = xml.SubElement(org_contacts_info, "base:Country").text = "UA"
+    org_phone_number = xml.SubElement(org_contacts_info, "base:PhoneNumber").text = "380442399353"
+    org_fax_number = xml.SubElement(org_contacts_info, "base:FaxNumber").text = "380442796680"
+    org_email = xml.SubElement(org_contacts_info, "base:EmailAddress").text = "ceprac@meteo.gov.ua"
+    org_description = xml.SubElement(org_contacts_info, "base:Descrition").text = "Data originator for this report"
+
+    org1_contacts_info = xml.SubElement(identifications_fields, "base:OrganisationContactInfo")
+    org1_name = xml.SubElement(org1_contacts_info, "base:Name").text = "Ukrainian Hydrometeorological Center"
+    org1_id = xml.SubElement(org1_contacts_info, "base:OrganisationID").text = "meteo.gov.ua"
+    org1_country = xml.SubElement(org1_contacts_info, "base:Country").text = "UA"
+    org1_phone_number = xml.SubElement(org1_contacts_info, "base:PhoneNumber").text = "380442399387"
+    org1_fax_number = xml.SubElement(org1_contacts_info, "base:FaxNUmber").text = "380442791080"
+    org1_email = xml.SubElement(org1_contacts_info, "base:EmailAddress").text = "office@meteo.gov.ua"
+    org1_description = xml.SubElement(org1_contacts_info, "base:Description").text = "Data originator for this report"
+    id_tree = xml.ElementTree(id_root)
+    return id_tree
+
+
+def get_location_data(file):
+    data = get_excel_information(file)
     return data
 
 
 def parse(filename):
-    id_xml_tree = create_id_xml()
+    logging.info("Creating file {}".format(filename))
+    file = "sometestfile.txt"
+    try:
+        id_xml_tree = create_id_xml(file)
+        logging.info("Successfully created id:Identification xml tree according to the data from {}".format(file))
+    except Exception:
+        logging.error("Error while creating id:Identification xml tree")
+        id_xml_tree = default_fill_id_xml()
+        logging.info("Created default id:Identification xml tree")
     file = open(filename, "r")
     lines = file.read().splitlines()
     handled_lines = handle_lines(lines)
-    locations_data = get_location_data()
+    try:
+        locations_data = get_location_data(excel_file_location)
+    except FileNotFoundError:
+        logging.critical(
+            "File {} is not found. Impossible to get data of stations locations".format(excel_file_location))
     measures_xml_tree, location_xml_tree = to_xml(handled_lines, locations_data)
+    logging.info("Successfully created the mon:Measurements and loc:Location xml trees")
     xml_document = create_xml_doc(id_xml_tree, measures_xml_tree, location_xml_tree)
+    logging.info("Successfully created the irix:Report xml tree")
     return xml_document
