@@ -1,8 +1,6 @@
+from credentials import input_file_location, output_file_location
 from parser import parse
 import logging
-
-input_file_location = "res/Radiation1.txt"
-output_file_location = "res/output.xml"
 
 
 def start():
