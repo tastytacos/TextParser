@@ -50,7 +50,7 @@ def handle_measure_date(given_data, creation_time):
     hour = int(given_data[-2] + given_data[-1])
     start_time = datetime(year, month, day, hour, 0, 0)
     end_time = datetime(year, month, day, hour + 1, 0, 0)
-    return str(start_time), str(end_time)
+    return start_time, end_time
 
 
 def format_time(given_time):
