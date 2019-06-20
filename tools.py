@@ -1,5 +1,7 @@
 from datetime import datetime
 
+import pytz
+
 
 def formula(valueRoentgen, multiplier):
     valueSievert = multiplier * 2.45e-12 *valueRoentgen
@@ -21,7 +23,7 @@ def handle_measure_value(given_data):
     valueRoentgen = int(new_data[-3] + new_data[-2] + new_data[-1])
     #per second
     valueSievert = formula(valueRoentgen, multiplier)
-    return str(valueSievert)
+    return valueSievert
 
 
 months = {
@@ -54,6 +56,7 @@ def handle_measure_date(given_data, creation_time):
 
 
 def format_time(given_time):
-    date = str(given_time.date())
-    time = str(given_time.strftime("%X"))
+    utc_time = given_time.astimezone(tz=pytz.utc)
+    date = str(utc_time.date())
+    time = str(utc_time.strftime("%X"))
     return date + "T" + time + "Z"

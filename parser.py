@@ -1,12 +1,12 @@
 import xml.etree.ElementTree as xml
 from datetime import datetime
 
-from credentials import log_directory, excel_file_location
+from credentials import log_directory, excel_file_location, id_xml_file_location
 from tools import handle_measure_date, handle_measure_value, format_time
 import pandas as pd
 import logging
 
-from trees_constructors import create_id_xml, default_fill_id_xml, to_xml
+from trees_constructors import create_id_xml, default_fill_id_xml, to_xml, get_time_value
 
 
 def generate_logfile_name():
@@ -47,6 +47,14 @@ def get_excel_information(filename):
     return data
 
 
+def validated(line):
+    for i in range(len(line)):
+        if not line[i].isalpha() and i != (len(line) - 1):
+            return False
+
+    pass
+
+
 def handle_lines(lines):
     '''
     Grab the lines which match to requirement pattern from the set of given lines
@@ -55,11 +63,17 @@ def handle_lines(lines):
     '''
     cleared_lines = []
     for line in lines:
-        if len(line.split(" ")) == 3:
+        if len(line.split()) == 3:
             cleared_lines.append(line)
+        if len(line.split()) == 4 and validated(line.split()[3]):
+            line1 = line.split()[0] + " "
+            line2 = line.split()[1] + " "
+            line3 = line.split()[2] + "="
+            new_line = [line1 + line2 + line3]
+            logging.warning("The line - {} were handled but {} was handled".format(line, new_line))
         else:
             logging.warning("The line - {} were thrown out because of wrong format".format(line))
-    return cleared_lines
+    return list(set(cleared_lines))
 
 
 def get_report_root():
@@ -91,10 +105,9 @@ def get_location_data(file):
 
 def parse(filename):
     logging.info("Creating file {}".format(filename))
-    file = "sometestfile.txt"
     try:
-        id_xml_tree = create_id_xml(file)
-        logging.info("Successfully created id:Identification xml tree according to the out from {}".format(file))
+        id_xml_tree = create_id_xml(id_xml_file_location)
+        logging.info("Successfully created id:Identification xml tree according to the out from {}".format(id_xml_file_location))
     except Exception:
         logging.error("Error while creating id:Identification xml tree")
         id_xml_tree = default_fill_id_xml()

@@ -2,7 +2,6 @@ import logging
 import xml.etree.ElementTree as xml
 from datetime import datetime
 import uuid
-from credentials import id_xml_file_location
 
 from tools import format_time, handle_measure_date, handle_measure_value
 
@@ -11,7 +10,7 @@ creation_time = datetime.now()
 
 # Identification block
 def create_id_xml(file):
-    file_data = xml.parse(id_xml_file_location)
+    file_data = xml.parse(file)
 
     id_root = xml.Element("id:Identification")
     org_reporting = xml.SubElement(id_root, "id:OrganisationsReporting").text = file_data.find(
@@ -21,6 +20,7 @@ def create_id_xml(file):
     report_context = xml.SubElement(id_root, "id:ReportContext").text = file_data.find("ReportContext").text
     report_sequence_number = xml.SubElement(id_root, "id:SequenceNumber").text = file_data.find(
         ".//SequenceNumber").text
+    # todo provide parameter for uuid
     report_uuid = xml.SubElement(id_root, "id:ReportUUID").text = str(uuid.uuid4())
     confidentiality = xml.SubElement(id_root, "id:Confidentiality").text = file_data.find("Confidentiality").text
     addresses = xml.SubElement(id_root, "id:Addressees")
@@ -95,48 +95,86 @@ def default_fill_id_xml():
     return id_tree
 
 
-# Measurements and Locations block
-def to_xml(handled_lines, locations_data):
-    measurement_root = xml.Element("mon:Measurements", ValidAt=format_time(
-        datetime(creation_time.year, creation_time.month, creation_time.day, 9, 0, 0)))
-    locations_root = xml.Element("loc:Locations")
-    for line in handled_lines:
-        # the next checks are a requirement of specification
-        if len(line.split(" ")) != 3:
-            print("The size of the \"{}\" must be equal 3".format(line))
-            continue
-        if line.split(" ")[2][0] != '8':
-            print(str(line.split(" ")[2]) + " must start with 8")
-            continue
-        station_index = line.split(" ")[0]
+def get_time_value(handled_lines):
+    new_dict = dict()
+    arr = []
+    times = [t.split(" ")[1] for t in handled_lines]
+    unique_times = set(times)
+    for element in unique_times:
+        for line in handled_lines:
+            if line.split(" ")[1] == element:
+                arr.append(line)
+        new_dict[element] = arr
+        arr = []
+    return new_dict
+
+
+def validate(time_value, times):
+    return_time = []
+    for time in times:
+        a = time_value.get(time)
         try:
-            name = locations_data.get(station_index).get("name")
-        except AttributeError:
-            logging.error("Error while trying to get the station - {}, with index - {}".format(name, station_index))
-            continue
-        try:
-            start_time, end_time = handle_measure_date(line.split(" ")[1], creation_time)
+            start_time, end_time = handle_measure_date(a[0].split(" ")[1], creation_time)
+            return_time.append(time)
         except ValueError:
-            logging.error("Value error in - {} with line - {}".format(line.split(" ")[1], line))
+            logging.error(
+                "Value error in - {} with line - {}".format(a[0].split(" ")[1], a))
             continue
-        measure_value = handle_measure_value(line.split(" ")[2])
+    return return_time
+
+
+def to_xml(handled_lines, locations_data):
+    time_value = get_time_value(handled_lines)
+    times = sorted(list(time_value.keys()))
+    validated_times = validate(time_value, times)
+    latest_time = max(validated_times)
+    start_latest_time, end_latest_time = handle_measure_date(latest_time, creation_time)
+    measurement_root = xml.Element("mon:Measurements", ValidAt=format_time(end_latest_time))
+    locations_root = xml.Element("loc:Locations")
+
+    for time in validated_times:
+        a = time_value.get(time)
+        try:
+            start_time, end_time = handle_measure_date(a[0].split(" ")[1], creation_time)
+        except ValueError:
+            logging.error(
+                "Value error in - {} with line - {}".format(a[0].split(" ")[1], a))
+            continue
         measurement_results = xml.SubElement(measurement_root, "mon:DoseRate")
         dose_rate = xml.SubElement(measurement_results, "mon:DoseRateType").text = "Gamma"
         measurement_period = xml.SubElement(measurement_results, "mon:MeasuringPeriod")
         start_m_time = xml.SubElement(measurement_period, "mon:StartTime").text = format_time(start_time)
         end_m_time = xml.SubElement(measurement_period, "mon:EndTime").text = format_time(end_time)
-        measurements = xml.SubElement(measurement_results, "mon:Measurements")
-        measurement = xml.SubElement(measurements, "mon:Measurement")
-        measurement_location = xml.SubElement(measurement, "loc:Location", ref=station_index)
-        value_units = xml.SubElement(measurement, "mon:Value", Unit="Sv/s").text = measure_value
 
-        location = xml.SubElement(locations_root, "loc:Location", id=station_index)
-        stantion_name = xml.SubElement(location, "loc:Name").text = name
-        geo_coord = xml.SubElement(location, "loc:GeographicCoordinates")
-        latitude = xml.SubElement(geo_coord, "loc:Latitude").text = locations_data.get(station_index).get("latitude")
-        longitude = xml.SubElement(geo_coord, "loc:Longitude").text = locations_data.get(station_index).get("longitude")
-        height = xml.SubElement(geo_coord, "loc:Height", Above="Sea", Unit="m").text = locations_data.get(
-            station_index).get("height")
+        for line in time_value.get(time):
+            # the next checks are a requirement of specification
+            if len(line.split(" ")) != 3:
+                print("The size of the \"{}\" must be equal 3".format(line))
+                continue
+            if line.split(" ")[2][0] != '8':
+                print(str(line.split(" ")[2]) + " must start with 8")
+                continue
+            station_index = line.split(" ")[0]
+            try:
+                name = locations_data.get(station_index).get("name")
+            except AttributeError:
+                logging.error("Error while trying to get the station - {}, with index - {}".format(name, station_index))
+                continue
+            measure_value = handle_measure_value(line.split(" ")[2])
+            measurements = xml.SubElement(measurement_results, "mon:Measurements")
+            measurement = xml.SubElement(measurements, "mon:Measurement")
+            measurement_location = xml.SubElement(measurement, "loc:Location", ref=station_index)
+            value_units = xml.SubElement(measurement, "mon:Value", Unit="Sv/s").text = format(measure_value, '.3g')
+
+            location = xml.SubElement(locations_root, "loc:Location", id=station_index)
+            stantion_name = xml.SubElement(location, "loc:Name").text = name
+            geo_coord = xml.SubElement(location, "loc:GeographicCoordinates")
+            latitude = xml.SubElement(geo_coord, "loc:Latitude").text = locations_data.get(station_index).get(
+                "latitude")
+            longitude = xml.SubElement(geo_coord, "loc:Longitude").text = locations_data.get(station_index).get(
+                "longitude")
+            height = xml.SubElement(geo_coord, "loc:Height", Above="Sea", Unit="m").text = locations_data.get(
+                station_index).get("height")
 
     measurements_tree = xml.ElementTree(measurement_root)
     locations_tree = xml.ElementTree(locations_root)
