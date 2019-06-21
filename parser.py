@@ -13,9 +13,6 @@ def generate_logfile_name():
     return log_directory + "/{}.log".format(datetime.now().strftime("%Y-%m-%d %X"))
 
 
-logfile_name = generate_logfile_name()
-
-logging.basicConfig(format='%(levelname)-8s [%(asctime)s] %(message)s', level=logging.DEBUG, filename=logfile_name)
 
 xmlms = {'base': "http://www.iaea.org/2012/IRIX/Format/Base",
          'html': "http://www.w3.org/1999/xhtml",
@@ -38,38 +35,46 @@ def get_excel_information(filename):
     for i in range(size):
         row = file.iloc[i]
         key = str(row[1])
-        name = row[2]
-        latitude = row[3]
-        longitude = row[4]
+        name = str(row[2])
+        latitude = str(row[3])
+        longitude = str(row[4])
         height = str(row[5])
         if key.isdigit():
             data[key] = {'name': name, 'latitude': latitude, 'longitude': longitude, 'height': height}
+        else:
+            print("Not digit")
     return data
 
 
-def validated(line):
-    for i in range(len(line)):
-        if not line[i].isalpha() and i != (len(line) - 1):
-            return False
-
-    pass
+def has_five_digits(line):
+    '''
+    Checks whether the third element of line has 5 numbers or not
+    :return: True if line meets the requirement
+    '''
+    third_line = line.split()[2]
+    digits_number = 0
+    for symbol in third_line:
+        if symbol.isdigit():
+            digits_number += 1
+    return digits_number == 5
 
 
 def handle_lines(lines):
     '''
     Grab the lines which match to requirement pattern from the set of given lines
     :param lines: given lines
-    :return: the lines which have three elements divided by space
+    :return: the lines which match to a special pattern
     '''
     cleared_lines = []
     for line in lines:
-        if len(line.split()) == 3:
+        if len(line.split()) == 3 and has_five_digits(line):
             cleared_lines.append(line)
-        if len(line.split()) == 4 and validated(line.split()[3]):
+        if len(line.split()) >= 4 and has_five_digits(line):
             line1 = line.split()[0] + " "
             line2 = line.split()[1] + " "
             line3 = line.split()[2] + "="
-            new_line = [line1 + line2 + line3]
+            new_line = line1 + line2 + line3
+            cleared_lines.append(new_line)
             logging.warning("The line - {} were handled but {} was handled".format(line, new_line))
         else:
             logging.warning("The line - {} were thrown out because of wrong format".format(line))
@@ -107,7 +112,8 @@ def parse(filename):
     logging.info("Creating file {}".format(filename))
     try:
         id_xml_tree = create_id_xml(id_xml_file_location)
-        logging.info("Successfully created id:Identification xml tree according to the out from {}".format(id_xml_file_location))
+        logging.info(
+            "Successfully created id:Identification xml tree according to the out from {}".format(id_xml_file_location))
     except Exception:
         logging.error("Error while creating id:Identification xml tree")
         id_xml_tree = default_fill_id_xml()

@@ -158,7 +158,9 @@ def to_xml(handled_lines, locations_data):
             try:
                 name = locations_data.get(station_index).get("name")
             except AttributeError:
-                logging.error("Error while trying to get the station - {}, with index - {}".format(name, station_index))
+                logging.error(
+                    "Error while trying to get the station with index - {}. Probably there is no such a station".format(
+                        station_index))
                 continue
             measure_value = handle_measure_value(line.split(" ")[2])
             measurements = xml.SubElement(measurement_results, "mon:Measurements")
