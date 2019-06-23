@@ -1,6 +1,6 @@
 from datetime import datetime
 
-import pytz
+import pandas as pd
 
 
 def formula(valueRoentgen, multiplier):
@@ -56,7 +56,33 @@ def handle_measure_date(given_data, creation_time):
 
 
 def format_time(given_time):
-    utc_time = given_time.astimezone(tz=pytz.utc)
-    date = str(utc_time.date())
-    time = str(utc_time.strftime("%X"))
+    # utc = pytz.utc
+    # utc_time = given_time.astimezone(tz=pytz.utc)
+    date = str(given_time.date())
+    time = str(given_time.strftime("%X"))
     return date + "T" + time + "Z"
+
+
+def get_excel_information(filename):
+    '''
+    Grab the information from given excel file and converts it to the dict
+    :param filename: name of the file
+    :return: dict: key = {name: ' ', latitude: ' ', longitude: ' '}
+    '''
+    file = pd.read_excel(filename)
+    size = len(file)
+    data = {}
+    for i in range(size):
+        row = file.get_values()[i]
+        key = str(row[1])
+        name = str(row[2])
+        latitude = str(row[3])
+        longitude = str(row[4])
+        height = str(row[5])
+        if key.isdigit():
+            data[key] = {'name': name, 'latitude': latitude, 'longitude': longitude, 'height': height}
+        else:
+            print("Not digit")
+    return data
+
+

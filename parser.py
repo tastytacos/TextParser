@@ -2,7 +2,7 @@ import xml.etree.ElementTree as xml
 from datetime import datetime
 
 from credentials import log_directory, excel_file_location, id_xml_file_location
-from tools import handle_measure_date, handle_measure_value, format_time
+from tools import handle_measure_date, handle_measure_value, format_time, get_excel_information
 import pandas as pd
 import logging
 
@@ -21,29 +21,6 @@ xmlms = {'base': "http://www.iaea.org/2012/IRIX/Format/Base",
          'irmis': "http://iec.iaea.org/irmis/2014/irix/format/extensions",
          'loc': "http://www.iaea.org/2012/IRIX/Format/Locations",
          'mon': "http://www.iaea.org/2012/IRIX/Format/Measurements"}
-
-
-def get_excel_information(filename):
-    '''
-    Grab the information from given excel file and converts it to the dict
-    :param filename: name of the file
-    :return: dict: key = {name: ' ', latitude: ' ', longitude: ' '}
-    '''
-    file = pd.read_excel(filename)
-    size = len(file)
-    data = {}
-    for i in range(size):
-        row = file.iloc[i]
-        key = str(row[1])
-        name = str(row[2])
-        latitude = str(row[3])
-        longitude = str(row[4])
-        height = str(row[5])
-        if key.isdigit():
-            data[key] = {'name': name, 'latitude': latitude, 'longitude': longitude, 'height': height}
-        else:
-            print("Not digit")
-    return data
 
 
 def has_five_digits(line):
@@ -123,7 +100,7 @@ def parse(filename):
     handled_lines = handle_lines(lines)
     try:
         locations_data = get_location_data(excel_file_location)
-    except FileNotFoundError:
+    except OSError:
         logging.critical(
             "File {} is not found. Impossible to get out of stations locations".format(excel_file_location))
     measures_xml_tree, location_xml_tree = to_xml(handled_lines, locations_data)

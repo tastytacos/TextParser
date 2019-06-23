@@ -1,7 +1,8 @@
-import xml.etree.ElementTree as xml
+import pandas as pd
 
-tree = xml.parse("res/id.xml")
-root = tree.getroot()
-org = tree.findall(".//OrganisationID")[1].text
+df = pd.read_excel('res/MeteoSt-RAD.xls')
+print(df)
 
-print(org)
+print ('/////////////')
+
+print df.get_values()[3]
