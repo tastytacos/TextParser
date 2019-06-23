@@ -3,6 +3,8 @@ import xml.etree.ElementTree as xml
 from datetime import datetime
 import uuid
 
+import pytz
+
 from tools import format_time, handle_measure_date, handle_measure_value
 
 creation_time = datetime.now()

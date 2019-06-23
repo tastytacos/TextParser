@@ -1,7 +1,9 @@
 from credentials import input_file_location, output_file_location
-from parser import parse, generate_logfile_name
+from parser import parse
 import logging
 import traceback
+
+from tools import generate_logfile_name
 
 
 def start():

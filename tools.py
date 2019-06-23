@@ -1,10 +1,17 @@
 from datetime import datetime
 
 import pandas as pd
+import pytz
+
+from credentials import log_directory
+
+
+def generate_logfile_name():
+    return log_directory + "/{}.log".format(datetime.now().strftime("%Y-%m-%d %X"))
 
 
 def formula(valueRoentgen, multiplier):
-    valueSievert = multiplier * 2.45e-12 *valueRoentgen
+    valueSievert = multiplier * 2.45e-12 * valueRoentgen
     return valueSievert
 
 
@@ -21,7 +28,7 @@ def handle_measure_value(given_data):
     multiplier = get_multiplier(int(new_data[0]))
     # per hour
     valueRoentgen = int(new_data[-3] + new_data[-2] + new_data[-1])
-    #per second
+    # per second
     valueSievert = formula(valueRoentgen, multiplier)
     return valueSievert
 
@@ -56,11 +63,15 @@ def handle_measure_date(given_data, creation_time):
 
 
 def format_time(given_time):
-    # utc = pytz.utc
-    # utc_time = given_time.astimezone(tz=pytz.utc)
-    date = str(given_time.date())
-    time = str(given_time.strftime("%X"))
+    utc_time = toUTC(given_time)
+    date = str(utc_time.date())
+    time = str(utc_time.strftime("%X"))
     return date + "T" + time + "Z"
+
+
+def toUTC(current_local_time):
+    current_local_time_timestamp = current_local_time.strftime("%s")
+    return datetime.utcfromtimestamp(float(current_local_time_timestamp))
 
 
 def get_excel_information(filename):
@@ -84,5 +95,3 @@ def get_excel_information(filename):
         else:
             print("Not digit")
     return data
-
-

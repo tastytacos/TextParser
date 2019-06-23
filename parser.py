@@ -2,15 +2,13 @@ import xml.etree.ElementTree as xml
 from datetime import datetime
 
 from credentials import log_directory, excel_file_location, id_xml_file_location
-from tools import handle_measure_date, handle_measure_value, format_time, get_excel_information
+from tools import get_excel_information
 import pandas as pd
 import logging
 
 from trees_constructors import create_id_xml, default_fill_id_xml, to_xml, get_time_value
 
 
-def generate_logfile_name():
-    return log_directory + "/{}.log".format(datetime.now().strftime("%Y-%m-%d %X"))
 
 
 
@@ -46,13 +44,14 @@ def handle_lines(lines):
     for line in lines:
         if len(line.split()) == 3 and has_five_digits(line):
             cleared_lines.append(line)
-        if len(line.split()) >= 4 and has_five_digits(line):
+        elif len(line.split()) >= 4 and has_five_digits(line):
             line1 = line.split()[0] + " "
             line2 = line.split()[1] + " "
             line3 = line.split()[2] + "="
             new_line = line1 + line2 + line3
             cleared_lines.append(new_line)
-            logging.warning("The line - {} were handled but {} was handled".format(line, new_line))
+            logging.warning("The line - {} were thrown out but {} was handled".format(line, new_line))
+
         else:
             logging.warning("The line - {} were thrown out because of wrong format".format(line))
     return list(set(cleared_lines))
