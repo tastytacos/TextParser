@@ -3,11 +3,9 @@ from datetime import datetime
 import pandas as pd
 import pytz
 
-from credentials import log_directory
 
-
-def generate_logfile_name():
-    return log_directory + "/{}.log".format(datetime.now().strftime("%Y-%m-%d %X"))
+def generate_filename_by_datetime(directory, extension):
+    return directory + "/{}.{}".format(datetime.now().strftime("%Y-%m-%d %X"), extension)
 
 
 def formula(valueRoentgen, multiplier):
