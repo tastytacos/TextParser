@@ -4,7 +4,20 @@ from tools import generate_filename_by_datetime
 
 
 def generate_input_file_location():
-    return "res/Radiation1.txt"
+    directory = "/home/rodosuser/Desktop/Meteodat/"
+    year = str(datetime.now().year)
+    month = datetime.now().month
+    if month < 10:
+        month = '0' + str(month)
+    else:
+        month = str(month)
+    day = datetime.now().day
+    if day < 10:
+        day = '0' + str(day)
+    else:
+        day = str(day)
+    filename = directory + year + "_" + month + "/" + day + "_" + month + "/Radiation.txt"
+    return "res/Radiation10.txt"
 
 
 def generate_output_file_location():
@@ -12,9 +25,9 @@ def generate_output_file_location():
     return generate_filename_by_datetime(directory, 'xml')
 
 
-sftp_host = 'hm.meteo.gov.ua'
-sftp_username = 'hm-operator'
-sftp_password = 'PsDHJjng'
+sftp_host = 'host'
+sftp_username = 'user'
+sftp_password = 'pass'
 
 input_file_location = generate_input_file_location()
 output_file_location = generate_output_file_location()

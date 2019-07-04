@@ -9,7 +9,7 @@ def generate_filename_by_datetime(directory, extension):
 
 
 def formula(valueRoentgen, multiplier):
-    valueSievert = multiplier * 2.45e-12 * valueRoentgen
+    valueSievert = multiplier * 2.43e-12 * valueRoentgen
     return valueSievert
 
 
@@ -17,8 +17,8 @@ def get_multiplier(param):
     if param == 0:
         return 1
     if param == 1:
-        return 10e3
-    return 10e6
+        return 1e3
+    return 1e6
 
 
 def handle_measure_value(given_data):
@@ -43,7 +43,7 @@ months = {
 
 def handle_month(unhandled_month, creation_time):
     m = months.get(int(unhandled_month))
-    if unhandled_month == 6 or unhandled_month == 7:
+    if unhandled_month == '6' or unhandled_month == '7':
         return creation_time.month
     return m
 

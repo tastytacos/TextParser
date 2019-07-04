@@ -29,12 +29,12 @@ def start():
         logging.error(traceback.format_exc())
         traceback.print_exc()
     logging.info("Successfully created the - {} xml file".format(output_file_location))
-    try:
-        send_to_sftp(output_file_location)
-        logging.info("Successfully send the file to sftp server")
-    except Exception:
-        logging.error("Error happened while writing file to sftp")
-        traceback.print_exc()
+    # try:
+    #     send_to_sftp(output_file_location)
+    #     logging.info("Successfully send the file to sftp server")
+    # except Exception:
+    #     logging.error("Error happened while writing file to sftp")
+    #     traceback.print_exc()
 
 
 if __name__ == '__main__':

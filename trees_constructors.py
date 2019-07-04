@@ -10,6 +10,10 @@ from tools import format_time, handle_measure_date, handle_measure_value
 creation_time = datetime.now()
 
 
+class WrongDayException(Exception):
+    pass
+
+
 # Identification block
 def create_id_xml(file):
     file_data = xml.parse(file)
@@ -138,10 +142,22 @@ def to_xml(handled_lines, locations_data):
         a = time_value.get(time)
         try:
             start_time, end_time = handle_measure_date(a[0].split(" ")[1], creation_time)
+            today = datetime.now().day
+            # today = 10
+
+            taken_time_day = start_time.day
+            if today != taken_time_day:
+                raise WrongDayException
         except ValueError:
             logging.error(
                 "Value error in - {} with line - {}".format(a[0].split(" ")[1], a))
             continue
+        except WrongDayException:
+            logging.error("Wrong day in - {} in line - {}. Day is {} but today is {}. This line was thrown out".format(
+                a[0].split(" ")[1], a,
+                taken_time_day, today))
+            continue
+
         measurement_results = xml.SubElement(measurement_root, "mon:DoseRate")
         dose_rate = xml.SubElement(measurement_results, "mon:DoseRateType").text = "Gamma"
         measurement_period = xml.SubElement(measurement_results, "mon:MeasuringPeriod")
