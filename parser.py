@@ -43,7 +43,12 @@ def handle_lines(lines):
         elif len(line.split()) >= 4 and has_five_digits(line):
             line1 = line.split()[0] + " "
             line2 = line.split()[1] + " "
-            line3 = line.split()[2] + "="
+            line3 = line.split()[2]
+            if "=" not in line3:
+                # this condition is very important, because of the fools who like writing two lines without separation.
+                # after splitting it causes the line with 2 '=' signs in a row. This completely spoil the calculation.
+                # this checking is here to avoid doubling the equality sign.
+                line3 += "="
             new_line = line1 + line2 + line3
             cleared_lines.append(new_line)
             logging.warning("The line - {} were thrown out but {} was handled".format(line, new_line))

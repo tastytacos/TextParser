@@ -9,7 +9,7 @@ def generate_input_file_location():
     month = datetime.now().strftime("%m")
     day = datetime.now().strftime("%d")
     filename = directory + year + "_" + month + "/" + day + "_" + month + "/Radiation.txt"
-    return "res/Radiation0508.txt"
+    return "res/Radiation2207.txt"
 
 
 def generate_output_file_location(directory):
