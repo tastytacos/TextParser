@@ -24,7 +24,7 @@ def start():
     xml_doc = parse(input_file_location)
     logging.info("Successfully parsed the xml information from - {} file".format(input_file_location))
     try:
-        xml_doc.write(output_file_location)
+        xml_doc.write(output_file_location, encoding="utf-8", xml_declaration=True, method="xml")
     except Exception:
         logging.error(traceback.format_exc())
         traceback.print_exc()

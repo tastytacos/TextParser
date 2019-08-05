@@ -8,10 +8,6 @@ import logging
 
 from trees_constructors import create_id_xml, default_fill_id_xml, to_xml, get_time_value
 
-
-
-
-
 xmlms = {'base': "http://www.iaea.org/2012/IRIX/Format/Base",
          'html': "http://www.w3.org/1999/xhtml",
          'id': "http://www.iaea.org/2012/IRIX/Format/Identification",
@@ -59,6 +55,7 @@ def handle_lines(lines):
 
 def get_report_root():
     root = xml.Element("irix:Report")
+    root.attrib["version"] = "1.0"
     for key, value in xmlms.items():
         root.attrib['xmlns:' + key] = value
     return root
