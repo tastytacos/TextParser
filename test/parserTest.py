@@ -3,13 +3,22 @@ import unittest
 
 
 class TestParser(unittest.TestCase):
-    def test_handle_lines(self):
-        lines1 = ["a b c", "d e", " "]
-        expected1 = ["a b c"]
-        lines2 = ["a b c", "d e f", "g "]
-        expected2 = ["a b c", "d e f"]
-        self.assertEqual(parser.handle_lines(lines1), expected1)
-        self.assertEqual(parser.handle_lines(lines2), expected2)
+    def test_has_five_digits(self):
+        line1 = "34319 19409 80008="
+        expected1 = True
+        line2 = "34319 19409 80008"
+        expected2 = True
+        line3 = "34319 19409 800082="
+        expected3 = False
+        line4 = "33586 19409 80014 55300="
+        expected4 = True
+        line5 = "34319 19409 8000="
+        expected5 = False
+        self.assertEqual(parser.has_five_digits(line1), expected1)
+        self.assertEqual(parser.has_five_digits(line2), expected2)
+        self.assertEqual(parser.has_five_digits(line3), expected3)
+        self.assertEqual(parser.has_five_digits(line4), expected4)
+        self.assertEqual(parser.has_five_digits(line5), expected5)
 
 if __name__ == '__main__':
     unittest.main()
