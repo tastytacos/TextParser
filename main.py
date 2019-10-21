@@ -17,7 +17,7 @@ def send_to_sftp(filename):
             sftp.put(filename)  # upload file to public/ on remote
 
 
-def start():
+def start(write_to_server=True):
     logfile_name = generate_filename_by_datetime(log_directory, 'log')
     logging.basicConfig(format='%(levelname)-8s [%(asctime)s] %(message)s', level=logging.DEBUG, filename=logfile_name)
 
@@ -29,13 +29,14 @@ def start():
         logging.error(traceback.format_exc())
         traceback.print_exc()
     logging.info("Successfully created the - {} xml file".format(output_file_location))
-    # try:
-    #     send_to_sftp(output_file_location)
-    #     logging.info("Successfully send the file to sftp server")
-    # except Exception:
-    #     logging.error("Error happened while writing file to sftp")
-    #     traceback.print_exc()
+    if write_to_server:
+        try:
+            send_to_sftp(output_file_location)
+            logging.info("Successfully send the file to sftp server")
+        except Exception:
+            logging.error("Error happened while writing file to sftp")
+            traceback.print_exc()
 
 
 if __name__ == '__main__':
-    start()
+    start(write_to_server=False)

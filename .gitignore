@@ -226,7 +226,7 @@ dmypy.json
 .pyre/
 
 # additional files
-res/*
+rubbish/*
 
 
 # End of https://www.gitignore.io/api/linux,python,pycharm
