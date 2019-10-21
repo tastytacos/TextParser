@@ -227,6 +227,6 @@ dmypy.json
 
 # additional files
 rubbish/*
-
+out/*
 
 # End of https://www.gitignore.io/api/linux,python,pycharm

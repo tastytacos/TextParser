@@ -1,7 +1,7 @@
 import pysftp
 
 from credentials import input_file_location, output_file_location, log_directory, sftp_host, sftp_username, \
-    sftp_password
+    sftp_password, remove_folder
 from parser import parse
 import logging
 import traceback
@@ -13,7 +13,7 @@ def send_to_sftp(filename):
     cnopts = pysftp.CnOpts()
     cnopts.hostkeys = None
     with pysftp.Connection(host=sftp_host, username=sftp_username, password=sftp_password) as sftp:
-        with sftp.cd('Test'):  # temporarily chdir to public
+        with sftp.cd(remove_folder):  # temporarily chdir to public
             sftp.put(filename)  # upload file to public/ on remote
 
 
