@@ -1,4 +1,5 @@
 import xml.etree.ElementTree as xml
+from collections import OrderedDict
 from datetime import datetime
 
 from credentials import log_directory, excel_file_location, id_xml_file_location
@@ -12,7 +13,6 @@ xmlms = {'base': "http://www.iaea.org/2012/IRIX/Format/Base",
          'html': "http://www.w3.org/1999/xhtml",
          'id': "http://www.iaea.org/2012/IRIX/Format/Identification",
          'irix': "http://www.iaea.org/2012/IRIX/Format",
-         'irmis': "http://iec.iaea.org/irmis/2014/irix/format/extensions",
          'loc': "http://www.iaea.org/2012/IRIX/Format/Locations",
          'mon': "http://www.iaea.org/2012/IRIX/Format/Measurements"}
 

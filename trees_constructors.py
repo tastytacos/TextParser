@@ -119,8 +119,10 @@ def validate(time_value, times):
     for time in times:
         a = time_value.get(time)
         try:
-            day = datetime.now().strftime("%d")
-            month = str(transform_month(datetime.now().month))
+            # day = datetime.now().strftime("%d")
+            # month = str(transform_month(datetime.now().month))
+            day = '22'
+            month = '7'
             today_day_month = day + month
             given_day_month = time[:3]
 
