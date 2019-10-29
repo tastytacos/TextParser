@@ -1,3 +1,5 @@
+import logging
+import traceback
 from datetime import datetime
 
 import pandas as pd
@@ -67,8 +69,12 @@ def handle_measure_date(given_data, creation_time):
     unhandled_month = given_data[2]
     month = int(handle_month(unhandled_month, creation_time))
     hour = int(given_data[-2] + given_data[-1])
-    start_time = datetime(year, month, day, hour, 0, 0)
-    end_time = datetime(year, month, day, hour + 1, 0, 0)
+    try:
+        start_time = datetime(year, month, day, hour, 0, 0)
+        end_time = datetime(year, month, day, hour + 1, 0, 0)
+    except Exception:
+        logging.error(traceback.format_exc())
+        return None
     return start_time, end_time
 
 

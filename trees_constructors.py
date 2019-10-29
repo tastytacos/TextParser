@@ -10,7 +10,7 @@ from tools import format_time, handle_measure_date, handle_measure_value, transf
 creation_time = datetime.now()
 
 
-class WrongDateException(Exception):
+class WrongDatetimeException(Exception):
     pass
 
 
@@ -121,17 +121,17 @@ def validate(time_value, times):
         try:
             # day = datetime.now().strftime("%d")
             # month = str(transform_month(datetime.now().month))
-            day = '22'
-            month = '7'
+            day = '28'
+            month = '0'
             today_day_month = day + month
             given_day_month = time[:3]
-
-            if today_day_month != given_day_month:
-                raise WrongDateException
+            hour = time[3:]
+            if today_day_month != given_day_month or int(hour) > 23:
+                raise WrongDatetimeException
             return_time.append(time)
-        except WrongDateException:
+        except WrongDatetimeException:
             logging.error(
-                "Incorrect date in - {} with line - {}".format(a[0].split(" ")[1], a))
+                "Incorrect datetime in - {} with line - {}".format(a[0].split(" ")[1], a))
             continue
     return return_time
 
@@ -144,7 +144,7 @@ def to_xml(handled_lines, locations_data):
     start_latest_time, end_latest_time = handle_measure_date(latest_time, creation_time)
     measurement_root = xml.Element("mon:Measurements", ValidAt=format_time(end_latest_time))
     locations_root = xml.Element("loc:Locations")
-
+    stations = []
     for time in validated_times:
         a = time_value.get(time)
         try:
@@ -183,15 +183,19 @@ def to_xml(handled_lines, locations_data):
             measurement_location = xml.SubElement(measurement, "loc:Location", ref=("UA" + station_index))
             value_units = xml.SubElement(measurement, "mon:Value", Unit="Sv/s").text = format(measure_value, '.3g')
 
-            location = xml.SubElement(locations_root, "loc:Location", id=("UA" + station_index))
-            stantion_name = xml.SubElement(location, "loc:Name").text = name
-            geo_coord = xml.SubElement(location, "loc:GeographicCoordinates")
-            latitude = xml.SubElement(geo_coord, "loc:Latitude").text = locations_data.get(station_index).get(
-                "latitude")
-            longitude = xml.SubElement(geo_coord, "loc:Longitude").text = locations_data.get(station_index).get(
-                "longitude")
-            height = xml.SubElement(geo_coord, "loc:Height", Above="Sea", Unit="m").text = locations_data.get(
-                station_index).get("height")
+            # the next line helps to avoid dublicating the stations in Location tree
+            if station_index not in stations:
+                location = xml.SubElement(locations_root, "loc:Location", id=("UA" + station_index))
+                stantion_name = xml.SubElement(location, "loc:Name").text = name
+                geo_coord = xml.SubElement(location, "loc:GeographicCoordinates")
+                latitude = xml.SubElement(geo_coord, "loc:Latitude").text = locations_data.get(station_index).get(
+                    "latitude")
+                longitude = xml.SubElement(geo_coord, "loc:Longitude").text = locations_data.get(station_index).get(
+                    "longitude")
+                height = xml.SubElement(geo_coord, "loc:Height", Above="Sea", Unit="m").text = locations_data.get(
+                    station_index).get("height")
+            stations.append(station_index)
+
 
     measurements_tree = xml.ElementTree(measurement_root)
     locations_tree = xml.ElementTree(locations_root)
