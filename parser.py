@@ -9,10 +9,6 @@ import logging
 
 from trees_constructors import create_id_xml, default_fill_id_xml, to_xml, get_time_value
 
-
-
-
-
 xmlms = {'base': "http://www.iaea.org/2012/IRIX/Format/Base",
          'html': "http://www.w3.org/1999/xhtml",
          'id': "http://www.iaea.org/2012/IRIX/Format/Identification",
@@ -90,30 +86,38 @@ def get_location_data(file):
     return data
 
 
-def parse(filename):
+def parse(filename, calendar_data):
     logging.info("Creating file {}".format(filename))
-    try:
-        file = open(filename, "r")
-    except Exception:
-        logging.critical("Error while creating file {}".format(filename))
-        logging.error(traceback.format_exc())
     try:
         id_xml_tree = create_id_xml(id_xml_file_location)
         logging.info(
             "Successfully created id:Identification xml tree according to the out from {}".format(id_xml_file_location))
     except Exception:
         logging.error("Error while creating id:Identification xml tree")
+        traceback.print_exc()
         id_xml_tree = default_fill_id_xml()
         logging.info("Created default id:Identification xml tree")
-    lines = file.read().splitlines()
-    handled_lines = handle_lines(lines)
+    try:
+        file = open(filename, "r")
+        lines = file.read().splitlines()
+        handled_lines = handle_lines(lines)
+    except Exception:
+        logging.critical("Error while creating file {}".format(filename))
+        logging.error(traceback.format_exc())
+        traceback.print_exc()
     try:
         locations_data = get_location_data(excel_file_location)
     except OSError:
         logging.critical(
             "File {} is not found. Impossible to get out of stations locations".format(excel_file_location))
-    measures_xml_tree, location_xml_tree = to_xml(handled_lines, locations_data)
-    logging.info("Successfully created the mon:Measurements and loc:Location xml trees")
-    xml_document = create_xml_doc(id_xml_tree, measures_xml_tree, location_xml_tree)
-    logging.info("Successfully created the irix:Report xml tree")
+        traceback.print_exc()
+    try:
+        measures_xml_tree, location_xml_tree = to_xml(handled_lines, locations_data, calendar_data)
+        logging.info("Successfully created the mon:Measurements and loc:Location xml trees")
+        xml_document = create_xml_doc(id_xml_tree, measures_xml_tree, location_xml_tree)
+        logging.info("Successfully created the irix:Report xml tree")
+    except UnboundLocalError:
+        logging.error(traceback.format_exc())
+        traceback.print_exc()
+        return None
     return xml_document

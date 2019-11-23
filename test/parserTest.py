@@ -20,5 +20,6 @@ class TestParser(unittest.TestCase):
         self.assertEqual(parser.has_five_digits(line4), expected4)
         self.assertEqual(parser.has_five_digits(line5), expected5)
 
+
 if __name__ == '__main__':
     unittest.main()
