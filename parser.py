@@ -1,5 +1,5 @@
+import traceback
 import xml.etree.ElementTree as xml
-from collections import OrderedDict
 from datetime import datetime
 
 from credentials import log_directory, excel_file_location, id_xml_file_location
@@ -8,6 +8,10 @@ import pandas as pd
 import logging
 
 from trees_constructors import create_id_xml, default_fill_id_xml, to_xml, get_time_value
+
+
+
+
 
 xmlms = {'base': "http://www.iaea.org/2012/IRIX/Format/Base",
          'html': "http://www.w3.org/1999/xhtml",
@@ -43,7 +47,7 @@ def handle_lines(lines):
         elif len(line.split()) >= 4 and has_five_digits(line):
             line1 = line.split()[0] + " "
             line2 = line.split()[1] + " "
-            line3 = line.split()[2]
+            line3 = line.split()[2] + "="
             if "=" not in line3:
                 # this condition is very important, because of the fools who like writing two lines without separation.
                 # after splitting it causes the line with 2 '=' signs in a row. This completely spoil the calculation.
@@ -89,6 +93,11 @@ def get_location_data(file):
 def parse(filename):
     logging.info("Creating file {}".format(filename))
     try:
+        file = open(filename, "r")
+    except Exception:
+        logging.critical("Error while creating file {}".format(filename))
+        logging.error(traceback.format_exc())
+    try:
         id_xml_tree = create_id_xml(id_xml_file_location)
         logging.info(
             "Successfully created id:Identification xml tree according to the out from {}".format(id_xml_file_location))
@@ -96,7 +105,6 @@ def parse(filename):
         logging.error("Error while creating id:Identification xml tree")
         id_xml_tree = default_fill_id_xml()
         logging.info("Created default id:Identification xml tree")
-    file = open(filename, "r")
     lines = file.read().splitlines()
     handled_lines = handle_lines(lines)
     try:

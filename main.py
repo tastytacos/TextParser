@@ -1,7 +1,7 @@
 import pysftp
 
 from credentials import input_file_location, output_file_location, log_directory, sftp_host, sftp_username, \
-    sftp_password, remove_folder
+    sftp_password, remote_folder, output_file_backup_directory
 from parser import parse
 import logging
 import traceback
@@ -9,11 +9,12 @@ import traceback
 from tools import generate_filename_by_datetime
 
 
+
 def send_to_sftp(filename):
     cnopts = pysftp.CnOpts()
     cnopts.hostkeys = None
     with pysftp.Connection(host=sftp_host, username=sftp_username, password=sftp_password) as sftp:
-        with sftp.cd(remove_folder):  # temporarily chdir to public
+        with sftp.cd(remote_folder):  # temporarily chdir to public
             sftp.put(filename)  # upload file to public/ on remote
 
 
@@ -29,6 +30,12 @@ def start(write_to_server=True):
         logging.error(traceback.format_exc())
         traceback.print_exc()
     logging.info("Successfully created the - {} xml file".format(output_file_location))
+    try:
+        xml_doc.write(generate_filename_by_datetime(output_file_backup_directory, 'xml'))
+    except Exception:
+        logging.error(traceback.format_exc())
+        traceback.print_exc()
+    logging.info("Successfully created the - {} xml file".format(output_file_backup_directory))
     if write_to_server:
         try:
             send_to_sftp(output_file_location)
@@ -39,4 +46,4 @@ def start(write_to_server=True):
 
 
 if __name__ == '__main__':
-    start(write_to_server=False)
+    start(True)
