@@ -1,0 +1,28 @@
+<Identification>
+    <OrganisationReporting>meteo.gov.ua</OrganisationReporting>
+    <ReportContext>Routine</ReportContext>
+    <SequenceNumber>1</SequenceNumber>
+    <Confidentiality>For Authority Use Only</Confidentiality>
+    <Addressees>
+        <Addressee>iaea.org</Addressee>
+    </Addressees>
+    <ReportingBases>
+        <ReportingBasis>Convention on Early Notification of a Nuclear Accident, Article 2</ReportingBasis>
+    </ReportingBases>
+    <ContactPerson>tabachnyi@meteo.gov.ua</ContactPerson>
+    <Identifications>
+        <PersonContactInfo>
+            <Name>Leonid Tabachnyi</Name>
+            <UserID>tabachnyi@meteo.gov.ua</UserID>
+            <Position>Head of Center of Radiation Accidents Consequences Prediction Center</Position>
+            <OrganisationID>meteo.gov.ua</OrganisationID>
+        </PersonContactInfo>
+        <OrganisationContactInfo>
+            <Name>Ukrainian Hydrometeorological Center</Name>
+            <OrganisationID>meteo.gov.ua</OrganisationID>
+            <Country>UA</Country>
+            <PhoneNumber>+380442399353</PhoneNumber>
+            <FaxNumber>+380442791080</FaxNumber>
+        </OrganisationContactInfo>
+    </Identifications>
+</Identification>

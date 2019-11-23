@@ -1,3 +1,5 @@
+import logging
+import traceback
 from datetime import datetime
 
 import pandas as pd
@@ -5,7 +7,8 @@ import pytz
 
 
 def generate_filename_by_datetime(directory, extension):
-    return directory + "/{}.{}".format(datetime.now().strftime("%Y-%m-%d %X"), extension)
+    ua_index = "UA"
+    return directory + "/" + ua_index + "{}.{}".format(datetime.now().strftime("%Y-%m-%d %X"), extension)
 
 
 def formula(valueRoentgen, multiplier):
@@ -40,7 +43,6 @@ def handle_measure_value(given_data):
     valueSievert = formula(valueRoentgen, multiplier)
     return valueSievert
 
-#todo copy this
 months = {
     0: "10",
     1: "01",
@@ -52,22 +54,24 @@ months = {
     9: "09"
 }
 
-#todo copy this
 def handle_month(unhandled_month, creation_time):
     if unhandled_month == '6' or unhandled_month == '7':
         return creation_time.month
     return months.get(int(unhandled_month))
 
 
-# todo test this function
 def handle_measure_date(given_data, creation_time):
     year = creation_time.year
     day = int(given_data[0] + given_data[1])
     unhandled_month = given_data[2]
     month = int(handle_month(unhandled_month, creation_time))
     hour = int(given_data[-2] + given_data[-1])
-    start_time = datetime(year, month, day, hour, 0, 0)
-    end_time = datetime(year, month, day, hour + 1, 0, 0)
+    try:
+        start_time = datetime(year, month, day, hour, 0, 0)
+        end_time = datetime(year, month, day, hour + 1, 0, 0)
+    except Exception:
+        logging.error(traceback.format_exc())
+        return None
     return start_time, end_time
 
 

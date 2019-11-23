@@ -1,0 +1,2232 @@
+<irix:Report xmlns:base="http://www.iaea.org/2012/IRIX/Format/Base" xmlns:html="http://www.w3.org/1999/xhtml"
+             xmlns:id="http://www.iaea.org/2012/IRIX/Format/Identification"
+             xmlns:irix="http://www.iaea.org/2012/IRIX/Format"
+             xmlns:irmis="http://iec.iaea.org/irmis/2014/irix/format/extensions"
+             xmlns:loc="http://www.iaea.org/2012/IRIX/Format/Locations"
+             xmlns:mon="http://www.iaea.org/2012/IRIX/Format/Measurements">
+    <id:Identification>
+        <id:OrganisationsReporting>meteo.gov.ua</id:OrganisationsReporting>
+        <id:DateAndTimeOfCreation>2019-07-02T12:39:58Z</id:DateAndTimeOfCreation>
+        <id:ReportContext>Routine</id:ReportContext>
+        <id:SequenceNumber>1</id:SequenceNumber>
+        <id:ReportUUID>057c9c7a-236e-4ea1-a976-acd0349d6f0c</id:ReportUUID>
+        <id:Confidentiality>For Authority Use Only</id:Confidentiality>
+        <id:Addressees>
+            <id:Addressee>iaea.org</id:Addressee>
+        </id:Addressees>
+        <id:ReportingBases>
+            <id:ReportingBasis>Convention on Early Notification of a Nuclear Accident, Article 2</id:ReportingBasis>
+        </id:ReportingBases>
+        <id:ContactPerson>tabachnyi@meteo.gov.ua</id:ContactPerson>
+        <id:Identifications>
+            <base:PersonContactInfo>
+                <base:Name>Leonid Tabachnyi</base:Name>
+                <base:UserID>tabachnyi@meteo.gov.ua</base:UserID>
+                <base:Position>Head of Center of Radiation Accidents Consequences Prediction Center</base:Position>
+                <base:OrganisationID>meteo.gov.ua</base:OrganisationID>
+            </base:PersonContactInfo>
+            <base:OrganisationContactInfo>
+                <base:Name>Ukrainian Hydrometeorological Center</base:Name>
+                <base:OrganisationID>meteo.gov.ua</base:OrganisationID>
+                <base:Country>UA</base:Country>
+                <base:PhoneNumber>380442399353</base:PhoneNumber>
+                <base:FaxNumber>380442791080</base:FaxNumber>
+            </base:OrganisationContactInfo>
+        </id:Identifications>
+    </id:Identification>
+    <mon:Measurements ValidAt="2019-10-27T08:00:00Z">
+        <mon:DoseRate>
+            <mon:DoseRateType>Gamma</mon:DoseRateType>
+            <mon:MeasuringPeriod>
+                <mon:StartTime>2019-10-02T06:00:00Z</mon:StartTime>
+                <mon:EndTime>2019-10-02T07:00:00Z</mon:EndTime>
+            </mon:MeasuringPeriod>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33356"/>
+                    <mon:Value Unit="Sv/s">2.92e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+        </mon:DoseRate>
+        <mon:DoseRate>
+            <mon:DoseRateType>Gamma</mon:DoseRateType>
+            <mon:MeasuringPeriod>
+                <mon:StartTime>2019-07-02T03:00:00Z</mon:StartTime>
+                <mon:EndTime>2019-07-02T04:00:00Z</mon:EndTime>
+            </mon:MeasuringPeriod>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33830"/>
+                    <mon:Value Unit="Sv/s">2.19e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+        </mon:DoseRate>
+        <mon:DoseRate>
+            <mon:DoseRateType>Gamma</mon:DoseRateType>
+            <mon:MeasuringPeriod>
+                <mon:StartTime>2019-07-02T06:00:00Z</mon:StartTime>
+                <mon:EndTime>2019-07-02T07:00:00Z</mon:EndTime>
+            </mon:MeasuringPeriod>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33887"/>
+                    <mon:Value Unit="Sv/s">2.43e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="34509"/>
+                    <mon:Value Unit="Sv/s">3.16e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33593"/>
+                    <mon:Value Unit="Sv/s">3.65e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33342"/>
+                    <mon:Value Unit="Sv/s">2.92e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33889"/>
+                    <mon:Value Unit="Sv/s">3.16e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="34317"/>
+                    <mon:Value Unit="Sv/s">2.67e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33877"/>
+                    <mon:Value Unit="Sv/s">2.67e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="34708"/>
+                    <mon:Value Unit="Sv/s">2.92e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="34319"/>
+                    <mon:Value Unit="Sv/s">2.19e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33759"/>
+                    <mon:Value Unit="Sv/s">2.67e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33299"/>
+                    <mon:Value Unit="Sv/s">2.19e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33409"/>
+                    <mon:Value Unit="Sv/s">2.43e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33297"/>
+                    <mon:Value Unit="Sv/s">2.43e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33898"/>
+                    <mon:Value Unit="Sv/s">2.92e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33392"/>
+                    <mon:Value Unit="Sv/s">2.19e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33317"/>
+                    <mon:Value Unit="Sv/s">2.92e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33513"/>
+                    <mon:Value Unit="Sv/s">2.92e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33391"/>
+                    <mon:Value Unit="Sv/s">2.92e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33645"/>
+                    <mon:Value Unit="Sv/s">2.67e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="34401"/>
+                    <mon:Value Unit="Sv/s">2.43e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33705"/>
+                    <mon:Value Unit="Sv/s">3.65e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33495"/>
+                    <mon:Value Unit="Sv/s">2.92e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33723"/>
+                    <mon:Value Unit="Sv/s">3.16e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33287"/>
+                    <mon:Value Unit="Sv/s">2.67e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33699"/>
+                    <mon:Value Unit="Sv/s">3.4e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33557"/>
+                    <mon:Value Unit="Sv/s">2.92e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33717"/>
+                    <mon:Value Unit="Sv/s">2.92e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33487"/>
+                    <mon:Value Unit="Sv/s">2.92e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33261"/>
+                    <mon:Value Unit="Sv/s">2.67e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33614"/>
+                    <mon:Value Unit="Sv/s">2.67e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33268"/>
+                    <mon:Value Unit="Sv/s">3.16e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33711"/>
+                    <mon:Value Unit="Sv/s">3.4e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="34312"/>
+                    <mon:Value Unit="Sv/s">2.67e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33791"/>
+                    <mon:Value Unit="Sv/s">3.65e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="34717"/>
+                    <mon:Value Unit="Sv/s">2.19e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33647"/>
+                    <mon:Value Unit="Sv/s">2.43e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33296"/>
+                    <mon:Value Unit="Sv/s">2.67e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33621"/>
+                    <mon:Value Unit="Sv/s">2.67e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33475"/>
+                    <mon:Value Unit="Sv/s">3.65e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33506"/>
+                    <mon:Value Unit="Sv/s">2.43e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33421"/>
+                    <mon:Value Unit="Sv/s">2.19e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33517"/>
+                    <mon:Value Unit="Sv/s">2.67e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33156"/>
+                    <mon:Value Unit="Sv/s">2.92e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="34514"/>
+                    <mon:Value Unit="Sv/s">3.4e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33777"/>
+                    <mon:Value Unit="Sv/s">2.67e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33446"/>
+                    <mon:Value Unit="Sv/s">2.92e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33362"/>
+                    <mon:Value Unit="Sv/s">2.92e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33719"/>
+                    <mon:Value Unit="Sv/s">3.16e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33382"/>
+                    <mon:Value Unit="Sv/s">2.92e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="34704"/>
+                    <mon:Value Unit="Sv/s">2.19e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33862"/>
+                    <mon:Value Unit="Sv/s">2.92e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33836"/>
+                    <mon:Value Unit="Sv/s">2.67e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="34615"/>
+                    <mon:Value Unit="Sv/s">2.43e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33869"/>
+                    <mon:Value Unit="Sv/s">2.43e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33246"/>
+                    <mon:Value Unit="Sv/s">2.92e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="34712"/>
+                    <mon:Value Unit="Sv/s">2.43e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33633"/>
+                    <mon:Value Unit="Sv/s">2.92e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33215"/>
+                    <mon:Value Unit="Sv/s">4.37e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33516"/>
+                    <mon:Value Unit="Sv/s">2.92e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33548"/>
+                    <mon:Value Unit="Sv/s">3.16e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="34421"/>
+                    <mon:Value Unit="Sv/s">3.16e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="34510"/>
+                    <mon:Value Unit="Sv/s">3.16e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33805"/>
+                    <mon:Value Unit="Sv/s">3.16e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33339"/>
+                    <mon:Value Unit="Sv/s">2.92e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33377"/>
+                    <mon:Value Unit="Sv/s">2.43e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33524"/>
+                    <mon:Value Unit="Sv/s">2.92e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33177"/>
+                    <mon:Value Unit="Sv/s">2.92e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33228"/>
+                    <mon:Value Unit="Sv/s">1.94e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33398"/>
+                    <mon:Value Unit="Sv/s">2.92e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33686"/>
+                    <mon:Value Unit="Sv/s">2.67e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33429"/>
+                    <mon:Value Unit="Sv/s">3.65e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="34609"/>
+                    <mon:Value Unit="Sv/s">3.16e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33848"/>
+                    <mon:Value Unit="Sv/s">2.67e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="34504"/>
+                    <mon:Value Unit="Sv/s">2.92e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="34407"/>
+                    <mon:Value Unit="Sv/s">2.92e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33354"/>
+                    <mon:Value Unit="Sv/s">2.92e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33631"/>
+                    <mon:Value Unit="Sv/s">2.67e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33067"/>
+                    <mon:Value Unit="Sv/s">1.94e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33203"/>
+                    <mon:Value Unit="Sv/s">2.92e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33288"/>
+                    <mon:Value Unit="Sv/s">2.43e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33663"/>
+                    <mon:Value Unit="Sv/s">3.16e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33136"/>
+                    <mon:Value Unit="Sv/s">2.67e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33518"/>
+                    <mon:Value Unit="Sv/s">2.67e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33788"/>
+                    <mon:Value Unit="Sv/s">3.4e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="34329"/>
+                    <mon:Value Unit="Sv/s">3.4e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33347"/>
+                    <mon:Value Unit="Sv/s">2.43e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33917"/>
+                    <mon:Value Unit="Sv/s">3.4e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33415"/>
+                    <mon:Value Unit="Sv/s">2.92e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33173"/>
+                    <mon:Value Unit="Sv/s">3.89e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="34502"/>
+                    <mon:Value Unit="Sv/s">2.67e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33345"/>
+                    <mon:Value Unit="Sv/s">2.43e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33801"/>
+                    <mon:Value Unit="Sv/s">3.16e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33484"/>
+                    <mon:Value Unit="Sv/s">3.16e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="34606"/>
+                    <mon:Value Unit="Sv/s">2.43e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33088"/>
+                    <mon:Value Unit="Sv/s">2.92e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="34300"/>
+                    <mon:Value Unit="Sv/s">2.92e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="34505"/>
+                    <mon:Value Unit="Sv/s">2.92e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33058"/>
+                    <mon:Value Unit="Sv/s">2.67e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33182"/>
+                    <mon:Value Unit="Sv/s">2.92e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33907"/>
+                    <mon:Value Unit="Sv/s">2.19e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33609"/>
+                    <mon:Value Unit="Sv/s">2.92e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33049"/>
+                    <mon:Value Unit="Sv/s">2.67e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="34434"/>
+                    <mon:Value Unit="Sv/s">2.92e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33275"/>
+                    <mon:Value Unit="Sv/s">3.16e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33837"/>
+                    <mon:Value Unit="Sv/s">2.19e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33236"/>
+                    <mon:Value Unit="Sv/s">2.92e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="34320"/>
+                    <mon:Value Unit="Sv/s">2.92e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33658"/>
+                    <mon:Value Unit="Sv/s">3.4e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="34304"/>
+                    <mon:Value Unit="Sv/s">2.19e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33466"/>
+                    <mon:Value Unit="Sv/s">2.92e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33075"/>
+                    <mon:Value Unit="Sv/s">2.67e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33651"/>
+                    <mon:Value Unit="Sv/s">2.92e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33761"/>
+                    <mon:Value Unit="Sv/s">3.16e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33526"/>
+                    <mon:Value Unit="Sv/s">2.43e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="34607"/>
+                    <mon:Value Unit="Sv/s">3.16e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="34208"/>
+                    <mon:Value Unit="Sv/s">2.43e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33187"/>
+                    <mon:Value Unit="Sv/s">2.67e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33634"/>
+                    <mon:Value Unit="Sv/s">3.16e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33511"/>
+                    <mon:Value Unit="Sv/s">3.16e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33146"/>
+                    <mon:Value Unit="Sv/s">3.16e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33464"/>
+                    <mon:Value Unit="Sv/s">3.65e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33581"/>
+                    <mon:Value Unit="Sv/s">3.4e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33301"/>
+                    <mon:Value Unit="Sv/s">3.4e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33605"/>
+                    <mon:Value Unit="Sv/s">2.67e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33598"/>
+                    <mon:Value Unit="Sv/s">3.16e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33586"/>
+                    <mon:Value Unit="Sv/s">4.13e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="34415"/>
+                    <mon:Value Unit="Sv/s">2.43e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33564"/>
+                    <mon:Value Unit="Sv/s">2.92e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33439"/>
+                    <mon:Value Unit="Sv/s">3.16e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33536"/>
+                    <mon:Value Unit="Sv/s">2.92e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="34426"/>
+                    <mon:Value Unit="Sv/s">3.4e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33393"/>
+                    <mon:Value Unit="Sv/s">2.67e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="34302"/>
+                    <mon:Value Unit="Sv/s">3.4e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33312"/>
+                    <mon:Value Unit="Sv/s">2.67e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33915"/>
+                    <mon:Value Unit="Sv/s">3.65e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33376"/>
+                    <mon:Value Unit="Sv/s">2.92e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33902"/>
+                    <mon:Value Unit="Sv/s">3.4e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33571"/>
+                    <mon:Value Unit="Sv/s">2.67e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33562"/>
+                    <mon:Value Unit="Sv/s">3.16e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33577"/>
+                    <mon:Value Unit="Sv/s">3.16e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33896"/>
+                    <mon:Value Unit="Sv/s">2.67e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33657"/>
+                    <mon:Value Unit="Sv/s">2.92e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33325"/>
+                    <mon:Value Unit="Sv/s">2.92e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33910"/>
+                    <mon:Value Unit="Sv/s">2.67e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33514"/>
+                    <mon:Value Unit="Sv/s">2.43e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33662"/>
+                    <mon:Value Unit="Sv/s">2.92e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="34314"/>
+                    <mon:Value Unit="Sv/s">2.43e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33135"/>
+                    <mon:Value Unit="Sv/s">2.67e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33213"/>
+                    <mon:Value Unit="Sv/s">2.92e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="34409"/>
+                    <mon:Value Unit="Sv/s">2.92e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33834"/>
+                    <mon:Value Unit="Sv/s">2.67e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33833"/>
+                    <mon:Value Unit="Sv/s">2.43e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+            <mon:Measurements>
+                <mon:Measurement>
+                    <loc:Location ref="33646"/>
+                    <mon:Value Unit="Sv/s">3.89e-11</mon:Value>
+                </mon:Measurement>
+            </mon:Measurements>
+        </mon:DoseRate>
+    </mon:Measurements>
+    <loc:Locations>
+        <loc:Location id="33356">
+            <loc:Name>Yahotyn</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>50.231542</loc:Latitude>
+                <loc:Longitude>31.793492</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">128</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33830">
+            <loc:Name>Bilhorod-Dnistrovskyi</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>46.184861</loc:Latitude>
+                <loc:Longitude>30.374236</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">9</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33887">
+            <loc:Name>Bolhrad</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>45.682714</loc:Latitude>
+                <loc:Longitude>28.625756</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">82</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="34509">
+            <loc:Name>Chaplyne</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>48.126031</loc:Latitude>
+                <loc:Longitude>36.237814</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">174</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33593">
+            <loc:Name>Smila</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>49.184578</loc:Latitude>
+                <loc:Longitude>31.864833</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">127</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33342">
+            <loc:Name>Vyshhorod</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>50.58685</loc:Latitude>
+                <loc:Longitude>30.517256</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">108</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33889">
+            <loc:Name>Izmail</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>45.370192</loc:Latitude>
+                <loc:Longitude>28.850822</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">30</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="34317">
+            <loc:Name>Slobozhanske</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>49.593436</loc:Latitude>
+                <loc:Longitude>36.523067</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">102</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33877">
+            <loc:Name>Nyschni Sirohosy</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>46.855142</loc:Latitude>
+                <loc:Longitude>34.397072</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">53</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="34708">
+            <loc:Name>Botieve</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>46.6836777777778</loc:Latitude>
+                <loc:Longitude>35.8429027777778</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">19</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="34319">
+            <loc:Name>Kupiansk</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>49.649878</loc:Latitude>
+                <loc:Longitude>37.648814</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">83</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33759">
+            <loc:Name>Zatyshshia</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>47.338964</loc:Latitude>
+                <loc:Longitude>29.877164</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">195</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33299">
+            <loc:Name>Kremenets</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>50.128819</loc:Latitude>
+                <loc:Longitude>25.737789</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">261</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33409">
+            <loc:Name>Berezhany</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>49.438633</loc:Latitude>
+                <loc:Longitude>24.936356</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">304</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33297">
+            <loc:Name>Brody</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>50.083586</loc:Latitude>
+                <loc:Longitude>25.158275</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">228</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33898">
+            <loc:Name>Vylkove</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>45.394344</loc:Latitude>
+                <loc:Longitude>29.592714</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">2</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33392">
+            <loc:Name>Yavoriv</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>49.946003</loc:Latitude>
+                <loc:Longitude>23.374631</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">253</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33317">
+            <loc:Name>Shepetivka</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>50.161414</loc:Latitude>
+                <loc:Longitude>27.037047</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">278</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33513">
+            <loc:Name>Stryi</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>49.257808</loc:Latitude>
+                <loc:Longitude>23.808403</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">296</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33391">
+            <loc:Name>Mostyska</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>49.791492</loc:Latitude>
+                <loc:Longitude>23.163306</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">234</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33645">
+            <loc:Name>Yaremche</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>48.452758</loc:Latitude>
+                <loc:Longitude>24.553225</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">531</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="34401">
+            <loc:Name>Krasnohrad</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>49.360625</loc:Latitude>
+                <loc:Longitude>35.415489</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">161</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33705">
+            <loc:Name>Pomichna</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>48.232464</loc:Latitude>
+                <loc:Longitude>31.395919</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">211</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33495">
+            <loc:Name>Veselyi Podil</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>49.614794</loc:Latitude>
+                <loc:Longitude>33.251925</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">96</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33723">
+            <loc:Name>Komisarivka</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>48.440094</loc:Latitude>
+                <loc:Longitude>33.900536</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">119</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33287">
+            <loc:Name>Rava-Ruska</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>50.242283</loc:Latitude>
+                <loc:Longitude>23.627156</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">251</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33699">
+            <loc:Name>Pervomaisk</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>48.052431</loc:Latitude>
+                <loc:Longitude>30.858089</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">103</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33557">
+            <loc:Name>Nova Ushytsia</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>48.843122</loc:Latitude>
+                <loc:Longitude>27.260781</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">290</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33717">
+            <loc:Name>Bobrynets</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>48.069114</loc:Latitude>
+                <loc:Longitude>32.167547</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">143</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33487">
+            <loc:Name>Cherkasy</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>49.409169</loc:Latitude>
+                <loc:Longitude>32.002997</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">107</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33261">
+            <loc:Name>Konotop</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>51.240856</loc:Latitude>
+                <loc:Longitude>33.18705</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">149</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33614">
+            <loc:Name>Svitlovodsk</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>49.071233</loc:Latitude>
+                <loc:Longitude>33.249506</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">84</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33268">
+            <loc:Name>Romny</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>50.768381</loc:Latitude>
+                <loc:Longitude>33.442667</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">169</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33711">
+            <loc:Name>Kropyvnytskyi</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>48.543528</loc:Latitude>
+                <loc:Longitude>32.283403</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">171</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="34312">
+            <loc:Name>Velykyi Burluk</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>50.078267</loc:Latitude>
+                <loc:Longitude>37.38465</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">175</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33791">
+            <loc:Name>Kryvyi Rih</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>48.0537138888889</loc:Latitude>
+                <loc:Longitude>33.2111388888889</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">124</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="34717">
+            <loc:Name>Berdyansk</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>46.753475</loc:Latitude>
+                <loc:Longitude>36.7804333333333</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">2</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33647">
+            <loc:Name>Rakhiv</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>48.047667</loc:Latitude>
+                <loc:Longitude>24.198261</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">432</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33296">
+            <loc:Name>Dubno</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>50.409178</loc:Latitude>
+                <loc:Longitude>25.757322</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">203</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33621">
+            <loc:Name>Kobeliaky</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>49.153925</loc:Latitude>
+                <loc:Longitude>34.207656</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">118</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33475">
+            <loc:Name>Kaniv</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>49.769831</loc:Latitude>
+                <loc:Longitude>31.42805</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">98</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33506">
+            <loc:Name>Poltava</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>49.609442</loc:Latitude>
+                <loc:Longitude>34.544597</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">160</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33421">
+            <loc:Name>Yampil</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>49.948078</loc:Latitude>
+                <loc:Longitude>26.204936</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">274</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33517">
+            <loc:Name>Nyzhni Vorota</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>48.774964</loc:Latitude>
+                <loc:Longitude>23.097817</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">489</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33156">
+            <loc:Name>Hlukhiv</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>51.655528</loc:Latitude>
+                <loc:Longitude>33.966469</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">167</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="34514">
+            <loc:Name>Pokrovsk</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>48.293614</loc:Latitude>
+                <loc:Longitude>37.155219</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">194</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33777">
+            <loc:Name>Voznesensk</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>47.582481</loc:Latitude>
+                <loc:Longitude>31.319892</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">34</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33446">
+            <loc:Name>Bilopillia</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>49.838033</loc:Latitude>
+                <loc:Longitude>28.884619</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">257</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33362">
+            <loc:Name>Pryluky</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>50.579069</loc:Latitude>
+                <loc:Longitude>32.363561</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">133</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33719">
+            <loc:Name>Dolynska</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>48.104394</loc:Latitude>
+                <loc:Longitude>32.750586</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">177</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33382">
+            <loc:Name>Lebedyn</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>50.586925</loc:Latitude>
+                <loc:Longitude>34.513642</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">132</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="34704">
+            <loc:Name>Melitopol</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>46.830206</loc:Latitude>
+                <loc:Longitude>35.356664</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">34</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33862">
+            <loc:Name>Velyka Oleksandrivka</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>47.317217</loc:Latitude>
+                <loc:Longitude>33.287617</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">56</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33836">
+            <loc:Name>Chornomorsk</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>46.307472</loc:Latitude>
+                <loc:Longitude>30.669067</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">19</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="34615">
+            <loc:Name>Volnovakha</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>47.614828</loc:Latitude>
+                <loc:Longitude>37.489497</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">267</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33869">
+            <loc:Name>Nova Kakhovka</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>46.789144</loc:Latitude>
+                <loc:Longitude>33.358567</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">25</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33246">
+            <loc:Name>Nizhyn</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>51.037978</loc:Latitude>
+                <loc:Longitude>31.900281</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">126</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="34712">
+            <loc:Name>Mariupol</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>47.042475</loc:Latitude>
+                <loc:Longitude>37.4843305555556</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">70</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33633">
+            <loc:Name>Mizhhirya</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>48.526833</loc:Latitude>
+                <loc:Longitude>23.504628</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">455</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33215">
+            <loc:Name>Korosten</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>50.955019</loc:Latitude>
+                <loc:Longitude>28.614608</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">187</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33516">
+            <loc:Name>Slavske</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>48.841883</loc:Latitude>
+                <loc:Longitude>23.449128</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">594</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33548">
+            <loc:Name>Kamianets-Podilskyi</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>48.692953</loc:Latitude>
+                <loc:Longitude>26.608136</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">222</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="34421">
+            <loc:Name>Svatove</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>49.4117</loc:Latitude>
+                <loc:Longitude>38.163428</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">89</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="34510">
+            <loc:Name>Bakhmut</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>48.557192</loc:Latitude>
+                <loc:Longitude>38.014736</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">124</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33805">
+            <loc:Name>Nikopol</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>47.592278</loc:Latitude>
+                <loc:Longitude>34.401883</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">55</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33339">
+            <loc:Name>Fastiv</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>50.068814</loc:Latitude>
+                <loc:Longitude>29.924283</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">209</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33377">
+            <loc:Name>Lubny</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>50.015789</loc:Latitude>
+                <loc:Longitude>32.986531</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">158</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33524">
+            <loc:Name>Dolyna</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>48.976942</loc:Latitude>
+                <loc:Longitude>23.997814</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">468</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33177">
+            <loc:Name>Volodymyr-Volynskyi</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>50.832917</loc:Latitude>
+                <loc:Longitude>24.343556</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">194</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33228">
+            <loc:Name>Teteriv</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>50.692453</loc:Latitude>
+                <loc:Longitude>29.583478</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">133</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33398">
+            <loc:Name>Drohobych</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>49.362269</loc:Latitude>
+                <loc:Longitude>23.5667</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">277</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33686">
+            <loc:Name>Haivoron</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>48.344883</loc:Latitude>
+                <loc:Longitude>29.844842</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">151</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33429">
+            <loc:Name>Khmelnytskyi</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>49.353658</loc:Latitude>
+                <loc:Longitude>26.937525</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">350</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="34609">
+            <loc:Name>Kyrylivka</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>47.329794</loc:Latitude>
+                <loc:Longitude>36.334997</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">221</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33848">
+            <loc:Name>Ochakiv</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>46.623758</loc:Latitude>
+                <loc:Longitude>31.538747</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">36</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="34504">
+            <loc:Name>Dnipro</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>48.360031</loc:Latitude>
+                <loc:Longitude>35.085072</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">145</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="34407">
+            <loc:Name>Hubynykha</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>48.792394</loc:Latitude>
+                <loc:Longitude>35.248164</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">127</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33354">
+            <loc:Name>Baryshivka</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>50.355164</loc:Latitude>
+                <loc:Longitude>31.337636</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">101</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33631">
+            <loc:Name>Uzhhorod</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>48.633275</loc:Latitude>
+                <loc:Longitude>22.261228</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">118</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33067">
+            <loc:Name>Svityaz</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>51.481511</loc:Latitude>
+                <loc:Longitude>23.849133</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">166</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33203">
+            <loc:Name>Olevsk</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>51.212875</loc:Latitude>
+                <loc:Longitude>27.643839</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">183</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33288">
+            <loc:Name>Kamianka-Buzka</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>50.114636</loc:Latitude>
+                <loc:Longitude>24.340056</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">210</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33663">
+            <loc:Name>Mohyliv-Podilskyi</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>48.452447</loc:Latitude>
+                <loc:Longitude>27.779711</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">78</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33136">
+            <loc:Name>Snovsk</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>51.796778</loc:Latitude>
+                <loc:Longitude>31.9595</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">128</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33518">
+            <loc:Name>Nyzhnyi Studenyi</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>48.701053</loc:Latitude>
+                <loc:Longitude>23.365783</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">611</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33788">
+            <loc:Name>Bashtanka</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>47.412778</loc:Latitude>
+                <loc:Longitude>32.468258</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">85</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="34329">
+            <loc:Name>Novopskov</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>49.524047</loc:Latitude>
+                <loc:Longitude>39.137536</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">91</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33347">
+            <loc:Name>Boryspil</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>50.333933</loc:Latitude>
+                <loc:Longitude>30.949289</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">122</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33917">
+            <loc:Name>Khorly</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>46.075908</loc:Latitude>
+                <loc:Longitude>33.298803</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">8</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33415">
+            <loc:Name>Ternopil</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>49.527778</loc:Latitude>
+                <loc:Longitude>25.691183</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">329</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33173">
+            <loc:Name>Kovel</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>51.198025</loc:Latitude>
+                <loc:Longitude>24.706633</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">174</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="34502">
+            <loc:Name>Pavlohrad</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>48.553053</loc:Latitude>
+                <loc:Longitude>35.88775</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">66</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33345">
+            <loc:Name>Kyiv</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>50.391792</loc:Latitude>
+                <loc:Longitude>30.535631</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">167</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33801">
+            <loc:Name>Loshkarivka</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>47.971261</loc:Latitude>
+                <loc:Longitude>34.173144</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">85</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33484">
+            <loc:Name>Zolotonosha</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>49.667169</loc:Latitude>
+                <loc:Longitude>32.017333</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">96</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="34606">
+            <loc:Name>Huliaipole</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>47.650281</loc:Latitude>
+                <loc:Longitude>36.268139</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">117</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33088">
+            <loc:Name>Sarny</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>51.312717</loc:Latitude>
+                <loc:Longitude>26.614006</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">156</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="34300">
+            <loc:Name>Kharkiv</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>49.927978</loc:Latitude>
+                <loc:Longitude>36.282428</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">156</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="34505">
+            <loc:Name>Synelnykove</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>48.351131</loc:Latitude>
+                <loc:Longitude>35.441947</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">144</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33058">
+            <loc:Name>Druzhba</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>52.052814</loc:Latitude>
+                <loc:Longitude>33.953497</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">190</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33182">
+            <loc:Name>Manevychi</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>51.284092</loc:Latitude>
+                <loc:Longitude>25.519292</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">202</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33907">
+            <loc:Name>Behtery</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>46.243019</loc:Latitude>
+                <loc:Longitude>32.283111</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">7</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33609">
+            <loc:Name>Znamianka</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>48.73935</loc:Latitude>
+                <loc:Longitude>32.690681</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">181</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33049">
+            <loc:Name>Semenivka</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>52.190856</loc:Latitude>
+                <loc:Longitude>32.573994</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">162</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="34434">
+            <loc:Name>Bilovodsk</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>49.193914</loc:Latitude>
+                <loc:Longitude>39.550028</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">75</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33275">
+            <loc:Name>Sumy</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>50.858789</loc:Latitude>
+                <loc:Longitude>34.749264</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">181</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33837">
+            <loc:Name>Odesa</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>46.440753</loc:Latitude>
+                <loc:Longitude>30.770336</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">42</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33236">
+            <loc:Name>Oster</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>50.956328</loc:Latitude>
+                <loc:Longitude>30.900344</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">114</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="34320">
+            <loc:Name>Troitske</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>49.901922</loc:Latitude>
+                <loc:Longitude>38.287053</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">152</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33658">
+            <loc:Name>Chernivtsi</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>48.266458</loc:Latitude>
+                <loc:Longitude>25.972375</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">246</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="34304">
+            <loc:Name>Kolomak</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>49.855239</loc:Latitude>
+                <loc:Longitude>35.208983</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">181</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33466">
+            <loc:Name>Myronivka</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>49.646042</loc:Latitude>
+                <loc:Longitude>31.082881</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">153</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33075">
+            <loc:Name>Liubeshiv</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>51.769056</loc:Latitude>
+                <loc:Longitude>25.510194</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">151</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33651">
+            <loc:Name>Kolomyia</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>48.548781</loc:Latitude>
+                <loc:Longitude>25.055417</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">298</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33761">
+            <loc:Name>Liubashivka</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>47.850825</loc:Latitude>
+                <loc:Longitude>30.268342</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">183</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33526">
+            <loc:Name>Ivano-Frankivsk</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>48.889197</loc:Latitude>
+                <loc:Longitude>24.689028</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">280</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="34607">
+            <loc:Name>Pryshyb</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>47.260522</loc:Latitude>
+                <loc:Longitude>35.332864</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">88</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="34208">
+            <loc:Name>Zolochiv</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>50.296389</loc:Latitude>
+                <loc:Longitude>35.961667</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">163</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33187">
+            <loc:Name>Lutsk</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>50.720822</loc:Latitude>
+                <loc:Longitude>25.395669</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">197</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33634">
+            <loc:Name>Berehove</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>48.194078</loc:Latitude>
+                <loc:Longitude>22.646181</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">115</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33511">
+            <loc:Name>Turka</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>49.150242</loc:Latitude>
+                <loc:Longitude>23.029744</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">592</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33146">
+            <loc:Name>Pokoshychi</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>51.766533</loc:Latitude>
+                <loc:Longitude>32.959744</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">195</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33464">
+            <loc:Name>Bila Tserkva</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>49.827833</loc:Latitude>
+                <loc:Longitude>30.106328</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">180</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33581">
+            <loc:Name>Zhashkiv</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>49.235583</loc:Latitude>
+                <loc:Longitude>30.113719</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">236</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33301">
+            <loc:Name>Rivne</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>50.602375</loc:Latitude>
+                <loc:Longitude>26.152683</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">231</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33605">
+            <loc:Name>Chyhyryn</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>49.058961</loc:Latitude>
+                <loc:Longitude>32.681731</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">124</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33598">
+            <loc:Name>Novomyrhorod</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>48.826436</loc:Latitude>
+                <loc:Longitude>31.648261</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">178</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33586">
+            <loc:Name>Zvenyhorodka</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>49.082181</loc:Latitude>
+                <loc:Longitude>30.892875</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">215</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="34415">
+            <loc:Name>Izium</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>49.187203</loc:Latitude>
+                <loc:Longitude>37.289517</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">78</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33564">
+            <loc:Name>Zhmerynka</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>49.030989</loc:Latitude>
+                <loc:Longitude>28.136239</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">314</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33439">
+            <loc:Name>Khmilnyk</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>49.567656</loc:Latitude>
+                <loc:Longitude>27.947956</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">285</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33536">
+            <loc:Name>Chortkiv</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>49.014917</loc:Latitude>
+                <loc:Longitude>25.769839</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">318</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="34426">
+            <loc:Name>Lysychansk</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>48.896591</loc:Latitude>
+                <loc:Longitude>38.459654</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">3</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33393">
+            <loc:Name>Lviv</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>49.807489</loc:Latitude>
+                <loc:Longitude>23.965106</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">323</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="34302">
+            <loc:Name>Bohodukniv</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>50.164719</loc:Latitude>
+                <loc:Longitude>35.498047</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">198</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33312">
+            <loc:Name>Novohrad-Volynskyi</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>50.592742</loc:Latitude>
+                <loc:Longitude>27.609611</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">218</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33915">
+            <loc:Name>Askania-Nova</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>46.451011</loc:Latitude>
+                <loc:Longitude>33.879906</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">30</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33376">
+            <loc:Name>Hadiach</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>50.368792</loc:Latitude>
+                <loc:Longitude>33.980172</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">154</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33902">
+            <loc:Name>Kherson</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>46.738128</loc:Latitude>
+                <loc:Longitude>32.708783</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">54</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33571">
+            <loc:Name>Lypovets</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>49.245286</loc:Latitude>
+                <loc:Longitude>29.229013</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">2</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33562">
+            <loc:Name>Vinnytsia</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>49.247694</loc:Latitude>
+                <loc:Longitude>28.604028</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">298</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33577">
+            <loc:Name>Haisyn</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>48.800303</loc:Latitude>
+                <loc:Longitude>29.395583</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">211</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33896">
+            <loc:Name>Sarata</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>46.024247</loc:Latitude>
+                <loc:Longitude>29.670119</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">14</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33657">
+            <loc:Name>Seliatyn</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>47.876486</loc:Latitude>
+                <loc:Longitude>25.216436</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">763</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33325">
+            <loc:Name>Zhytomyr</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>50.280617</loc:Latitude>
+                <loc:Longitude>28.659142</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">219</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33910">
+            <loc:Name>Henichesk</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>46.164164</loc:Latitude>
+                <loc:Longitude>34.807253</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">15</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33514">
+            <loc:Name>Velykyi Bereznyi</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>48.891758</loc:Latitude>
+                <loc:Longitude>22.452575</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">207</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33662">
+            <loc:Name>Novodnistrovsk</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>48.578481</loc:Latitude>
+                <loc:Longitude>27.437333</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">243</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="34314">
+            <loc:Name>Pechenihi</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>49.880114</loc:Latitude>
+                <loc:Longitude>36.980472</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">1</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33135">
+            <loc:Name>Chernihiv</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>51.443883</loc:Latitude>
+                <loc:Longitude>31.200172</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">145</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33213">
+            <loc:Name>Ovruch</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>51.329031</loc:Latitude>
+                <loc:Longitude>28.783292</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">170</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="34409">
+            <loc:Name>Lozova</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>48.887133</loc:Latitude>
+                <loc:Longitude>36.344275</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">177</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33834">
+            <loc:Name>Rozdilna</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>46.850264</loc:Latitude>
+                <loc:Longitude>30.07085</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">148</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33833">
+            <loc:Name>Serbka</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>47.012989</loc:Latitude>
+                <loc:Longitude>30.752036</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">73</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+        <loc:Location id="33646">
+            <loc:Name>Pozhezhevsca</loc:Name>
+            <loc:GeographicCoordinates>
+                <loc:Latitude>48.15395</loc:Latitude>
+                <loc:Longitude>24.534283</loc:Longitude>
+                <loc:Height Above="Sea" Unit="m">1451</loc:Height>
+            </loc:GeographicCoordinates>
+        </loc:Location>
+    </loc:Locations>
+</irix:Report>
