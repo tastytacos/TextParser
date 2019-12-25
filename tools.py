@@ -8,7 +8,9 @@ import pytz
 
 def generate_filename_by_datetime(directory, extension):
     ua_index = "UA"
-    return directory + "/" + ua_index + "{}.{}".format(datetime.now().strftime("%Y-%m-%d %X"), extension)
+    str = datetime.now().strftime("%Y-%m-%d %X")
+    new_str = str.replace(' ', '_').replace(':', '_')
+    return directory + "/" + ua_index + "{}.{}".format(new_str, extension)
 
 
 def formula(valueRoentgen, multiplier):
