@@ -1,4 +1,5 @@
 import logging
+import traceback
 import xml.etree.ElementTree as xml
 from datetime import datetime
 import uuid
@@ -114,15 +115,17 @@ def get_time_value(handled_lines):
     return new_dict
 
 
-def validate(time_value, times):
+def validate(time_value, times, calendar_data):
     return_time = []
     for time in times:
         a = time_value.get(time)
         try:
-            day = datetime.now().strftime("%d")
-            month = str(transform_month(datetime.now().month))
-            # day = '22'       # for testing mode
-            # month = '7'      # for testing mode
+            # day = datetime.now().strftime("%d")
+            # month = str(transform_month(datetime.now().month))
+            # day = '15'       # for testing mode
+            # month = '1'      # for testing mode
+            day = calendar_data['day']
+            month = calendar_data['month']
             today_day_month = day + month
             given_day_month = time[:3]
             hour = time[3:]
@@ -136,11 +139,16 @@ def validate(time_value, times):
     return return_time
 
 
-def to_xml(handled_lines, locations_data):
+def to_xml(handled_lines, locations_data, calendar_data):
     time_value = get_time_value(handled_lines)
     times = sorted(list(time_value.keys()))
-    validated_times = validate(time_value, times)
-    latest_time = max(validated_times)
+    validated_times = validate(time_value, times, calendar_data)
+    try:
+        latest_time = max(validated_times)
+    except ValueError:
+        logging.error(traceback.format_exc())
+        traceback.print_exc()
+        logging.critical("If you see this message, maybe the data in your file and given data don't match")
     start_latest_time, end_latest_time = handle_measure_date(latest_time, creation_time)
     measurement_root = xml.Element("mon:Measurements", ValidAt=format_time(end_latest_time))
     locations_root = xml.Element("loc:Locations")
