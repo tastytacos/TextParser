@@ -71,5 +71,5 @@ def start(par_input_file_location, par_output_file_location, write_to_server=Tru
 
 if __name__ == '__main__':
     # if you need a test mode provide the call of the function like in the next line
-    # start("rubbish/Radiation0119.txt", output_file_location, write_to_server=False, day='15', month='1')
-    start(input_file_location, output_file_location, write_to_server=False)
+    start("rubbish/Radiation0119.txt", output_file_location, write_to_server=False, day='15', month='1')
+    #start(input_file_location, output_file_location, write_to_server=False)
